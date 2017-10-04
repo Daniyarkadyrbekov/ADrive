@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A907598159047C8182D9B86E29BB2F9B2A124E0B",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "5C8465E7799B3FA673681A822970235B94B5E162" : 9223372036854775807,
+    "A907598159047C8182D9B86E29BB2F9B2A124E0B" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "A5489074-8DD9-4090-BD06-A7B466C0DF03",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "5C8465E7799B3FA673681A822970235B94B5E162" : "",
+    "A907598159047C8182D9B86E29BB2F9B2A124E0B" : "ADrive\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "ADrive",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ADrive\/ADrive.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Daniyarkadyrbekov\/CatchMe.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5C8465E7799B3FA673681A822970235B94B5E162"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Daniyarkadyrbekov\/ADrive.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A907598159047C8182D9B86E29BB2F9B2A124E0B"
+    }
+  ]
+}
