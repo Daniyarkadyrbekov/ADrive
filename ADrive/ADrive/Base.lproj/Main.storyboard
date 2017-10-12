@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UDC-ot-IPd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="-798"/>
+            <point key="canvasLocation" x="2301" y="-777"/>
         </scene>
         <!--Test View Controller-->
         <scene sceneID="78J-0H-Ku0">
@@ -84,6 +84,9 @@
                                 <state key="normal" title="Войти">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="WyF-CE-Kra" kind="showDetail" id="j1a-Om-l0S"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4iC-bH-e7D">
                                 <rect key="frame" x="24" y="461" width="198" height="30"/>
@@ -126,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqL-KW-eJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1607.2" y="121.88905547226388"/>
+            <point key="canvasLocation" x="1606.5" y="121.5"/>
         </scene>
         <!--Create Account Controller-->
         <scene sceneID="x7j-hO-Ch9">
@@ -198,7 +201,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="2696.8000000000002" y="121.88905547226388"/>
+            <point key="canvasLocation" x="2301" y="122"/>
         </scene>
         <!--Forgot Password Controller-->
         <scene sceneID="kDJ-67-YoG">
@@ -260,7 +263,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WC4-zE-xpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2358" y="891"/>
+            <point key="canvasLocation" x="2301" y="984"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JhO-mX-b6z">
