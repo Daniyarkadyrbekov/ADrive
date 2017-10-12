@@ -8,17 +8,16 @@
 
 import UIKit
 
-class ViewController: UITableViewController {
+class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(hendleLogout))
     }
     
     func hendleLogout(){
-        let loginViewController = LoginController()
-        present(loginViewController, animated: true, completion: nil)
+        let testViewController = TestViewController()
+        present(testViewController, animated: true, completion: nil)
     }
 
 

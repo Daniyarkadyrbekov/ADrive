@@ -12,7 +12,9 @@
 		282F17B61F85710C00D3A5DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282F17B41F85710C00D3A5DE /* Main.storyboard */; };
 		282F17B81F85710C00D3A5DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 282F17B71F85710C00D3A5DE /* Assets.xcassets */; };
 		282F17BB1F85710C00D3A5DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282F17B91F85710C00D3A5DE /* LaunchScreen.storyboard */; };
-		2897C7BF1F8E44B700AB76B0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7BE1F8E44B700AB76B0 /* LoginController.swift */; };
+		2897C7C61F8E541200AB76B0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C41F8E541200AB76B0 /* TestViewController.swift */; };
+		2897C7CA1F8F6B2200AB76B0 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */; };
+		2897C7CC1F8F6CF600AB76B0 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +25,9 @@
 		282F17B71F85710C00D3A5DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		282F17BA1F85710C00D3A5DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		282F17BC1F85710C00D3A5DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2897C7BE1F8E44B700AB76B0 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		2897C7C41F8E541200AB76B0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
+		2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +61,9 @@
 			isa = PBXGroup;
 			children = (
 				2897C7BB1F8E444D00AB76B0 /* Controllers */,
-				282F17B01F85710B00D3A5DE /* AppDelegate.swift */,
-				282F17B21F85710B00D3A5DE /* ViewController.swift */,
 				282F17B41F85710C00D3A5DE /* Main.storyboard */,
-				282F17B71F85710C00D3A5DE /* Assets.xcassets */,
-				282F17B91F85710C00D3A5DE /* LaunchScreen.storyboard */,
 				282F17BC1F85710C00D3A5DE /* Info.plist */,
+				2897C7C81F8F5DBB00AB76B0 /* Supporting Files */,
 			);
 			path = ADrive;
 			sourceTree = "<group>";
@@ -70,9 +71,22 @@
 		2897C7BB1F8E444D00AB76B0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2897C7BE1F8E44B700AB76B0 /* LoginController.swift */,
+				2897C7C41F8E541200AB76B0 /* TestViewController.swift */,
+				282F17B21F85710B00D3A5DE /* ViewController.swift */,
+				2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */,
+				2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		2897C7C81F8F5DBB00AB76B0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				282F17B01F85710B00D3A5DE /* AppDelegate.swift */,
+				282F17B71F85710C00D3A5DE /* Assets.xcassets */,
+				282F17B91F85710C00D3A5DE /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +162,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2897C7BF1F8E44B700AB76B0 /* LoginController.swift in Sources */,
+				2897C7CC1F8F6CF600AB76B0 /* ForgotPasswordController.swift in Sources */,
 				282F17B31F85710B00D3A5DE /* ViewController.swift in Sources */,
+				2897C7C61F8E541200AB76B0 /* TestViewController.swift in Sources */,
 				282F17B11F85710B00D3A5DE /* AppDelegate.swift in Sources */,
+				2897C7CA1F8F6B2200AB76B0 /* CreateAccountController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
