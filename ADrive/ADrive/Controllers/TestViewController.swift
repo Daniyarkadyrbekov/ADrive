@@ -20,5 +20,9 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         // Do any additional setup after loading the view.
     }
-    
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
 }

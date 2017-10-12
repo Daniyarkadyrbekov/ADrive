@@ -192,6 +192,10 @@
                             <constraint firstItem="4SA-Cf-K9O" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="uCP-fs-6sq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="94A-UX-rat" id="ZYT-xC-T3z"/>
+                        <outlet property="passwordTextField" destination="PKv-a1-LnV" id="xhc-tk-wac"/>
+                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="2696.8000000000002" y="121.88905547226388"/>
@@ -250,6 +254,9 @@
                             <constraint firstItem="qz6-iE-Fx7" firstAttribute="centerY" secondItem="2P9-0j-8za" secondAttribute="centerY" id="uxE-AK-Ggq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginTextField" destination="qz6-iE-Fx7" id="THa-Or-UFp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WC4-zE-xpF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

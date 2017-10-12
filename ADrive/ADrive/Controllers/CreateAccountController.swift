@@ -8,12 +8,23 @@
 
 import UIKit
 
-class CreateAccountController: UIViewController {
+class CreateAccountController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        loginTextField.delegate = self
+        passwordTextField.delegate = self
+        
         // Do any additional setup after loading the view.
     }
 
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return false
+    }
+    
 }
