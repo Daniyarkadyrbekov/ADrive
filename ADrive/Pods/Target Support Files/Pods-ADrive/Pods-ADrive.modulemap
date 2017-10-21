@@ -1,0 +1,6 @@
+framework module Pods_ADrive {
+  umbrella header "Pods-ADrive-umbrella.h"
+
+  export *
+  module * { export * }
+}

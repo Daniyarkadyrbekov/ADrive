@@ -15,6 +15,7 @@
 		2897C7C61F8E541200AB76B0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C41F8E541200AB76B0 /* TestViewController.swift */; };
 		2897C7CA1F8F6B2200AB76B0 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */; };
 		2897C7CC1F8F6CF600AB76B0 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */; };
+		C5D7D86A16051E27C069FBC1 /* Pods_ADrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1AE653357240A394ECB88A5 /* Pods_ADrive.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,9 @@
 		2897C7C41F8E541200AB76B0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
+		A1AE653357240A394ECB88A5 /* Pods_ADrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BED05C58104D2815C308A0A8 /* Pods-ADrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADrive/Pods-ADrive.debug.xcconfig"; sourceTree = "<group>"; };
+		E099CFB295107EBE7F94AF83 /* Pods-ADrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADrive.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADrive/Pods-ADrive.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5D7D86A16051E27C069FBC1 /* Pods_ADrive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -46,6 +51,8 @@
 			children = (
 				282F17AF1F85710B00D3A5DE /* ADrive */,
 				282F17AE1F85710B00D3A5DE /* Products */,
+				345F8E5079632D5AB560EFA9 /* Pods */,
+				E8FA359083226BD365D1D18E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +96,23 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		345F8E5079632D5AB560EFA9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BED05C58104D2815C308A0A8 /* Pods-ADrive.debug.xcconfig */,
+				E099CFB295107EBE7F94AF83 /* Pods-ADrive.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E8FA359083226BD365D1D18E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A1AE653357240A394ECB88A5 /* Pods_ADrive.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,9 +120,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 282F17BF1F85710C00D3A5DE /* Build configuration list for PBXNativeTarget "ADrive" */;
 			buildPhases = (
+				D7DFBF465A080AFCD956EA5D /* [CP] Check Pods Manifest.lock */,
 				282F17A91F85710B00D3A5DE /* Sources */,
 				282F17AA1F85710B00D3A5DE /* Frameworks */,
 				282F17AB1F85710B00D3A5DE /* Resources */,
+				9ACB936CC15C1CEAA96C5B9E /* [CP] Embed Pods Frameworks */,
+				4B9B35E5E7409E33C9C299BB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,6 +183,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4B9B35E5E7409E33C9C299BB /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ADrive/Pods-ADrive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9ACB936CC15C1CEAA96C5B9E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ADrive/Pods-ADrive-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ADrive/Pods-ADrive-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D7DFBF465A080AFCD956EA5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ADrive-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		282F17A91F85710B00D3A5DE /* Sources */ = {
@@ -287,6 +368,7 @@
 		};
 		282F17C01F85710C00D3A5DE /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BED05C58104D2815C308A0A8 /* Pods-ADrive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ST93RGEW47;
@@ -300,6 +382,7 @@
 		};
 		282F17C11F85710C00D3A5DE /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E099CFB295107EBE7F94AF83 /* Pods-ADrive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = ST93RGEW47;

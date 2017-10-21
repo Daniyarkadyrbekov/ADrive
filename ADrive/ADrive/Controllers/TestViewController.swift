@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TestViewController: UIViewController, UITextFieldDelegate {
     
@@ -19,7 +20,9 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         loginTextField.delegate = self
         passwordTextField.delegate = self
         // Do any additional setup after loading the view.
+        
     }
+    
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
