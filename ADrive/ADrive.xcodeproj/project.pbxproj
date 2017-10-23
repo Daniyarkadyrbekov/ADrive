@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		282D1A4C1F9D1CE40075E97F /* UserMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282D1A4B1F9D1CE40075E97F /* UserMainController.swift */; };
 		282F17B11F85710B00D3A5DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F17B01F85710B00D3A5DE /* AppDelegate.swift */; };
 		282F17B31F85710B00D3A5DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F17B21F85710B00D3A5DE /* ViewController.swift */; };
 		282F17B61F85710C00D3A5DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282F17B41F85710C00D3A5DE /* Main.storyboard */; };
@@ -15,10 +16,11 @@
 		2897C7C61F8E541200AB76B0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C41F8E541200AB76B0 /* TestViewController.swift */; };
 		2897C7CA1F8F6B2200AB76B0 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */; };
 		2897C7CC1F8F6CF600AB76B0 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */; };
-		C5D7D86A16051E27C069FBC1 /* Pods_ADrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1AE653357240A394ECB88A5 /* Pods_ADrive.framework */; };
+		86973E415BAF48025CD48078 /* libPods-ADrive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5540972116032F46B669EC3D /* libPods-ADrive.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		282D1A4B1F9D1CE40075E97F /* UserMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainController.swift; sourceTree = "<group>"; };
 		282F17AD1F85710B00D3A5DE /* ADrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282F17B01F85710B00D3A5DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		282F17B21F85710B00D3A5DE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -29,7 +31,7 @@
 		2897C7C41F8E541200AB76B0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
-		A1AE653357240A394ECB88A5 /* Pods_ADrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5540972116032F46B669EC3D /* libPods-ADrive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ADrive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED05C58104D2815C308A0A8 /* Pods-ADrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADrive/Pods-ADrive.debug.xcconfig"; sourceTree = "<group>"; };
 		E099CFB295107EBE7F94AF83 /* Pods-ADrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADrive.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADrive/Pods-ADrive.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -39,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5D7D86A16051E27C069FBC1 /* Pods_ADrive.framework in Frameworks */,
+				86973E415BAF48025CD48078 /* libPods-ADrive.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +84,7 @@
 				2897C7C41F8E541200AB76B0 /* TestViewController.swift */,
 				2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */,
 				2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */,
+				282D1A4B1F9D1CE40075E97F /* UserMainController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -108,7 +111,7 @@
 		E8FA359083226BD365D1D18E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A1AE653357240A394ECB88A5 /* Pods_ADrive.framework */,
+				5540972116032F46B669EC3D /* libPods-ADrive.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -191,9 +194,13 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ADrive/Pods-ADrive-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+				"${PODS_ROOT}/GooglePlaces/Frameworks/GooglePlaces.framework/Resources/GooglePlaces.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -246,6 +253,7 @@
 				2897C7CC1F8F6CF600AB76B0 /* ForgotPasswordController.swift in Sources */,
 				282F17B31F85710B00D3A5DE /* ViewController.swift in Sources */,
 				2897C7C61F8E541200AB76B0 /* TestViewController.swift in Sources */,
+				282D1A4C1F9D1CE40075E97F /* UserMainController.swift in Sources */,
 				282F17B11F85710B00D3A5DE /* AppDelegate.swift in Sources */,
 				2897C7CA1F8F6B2200AB76B0 /* CreateAccountController.swift in Sources */,
 			);

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+import GoogleMaps
 
 class TestViewController: UIViewController, UITextFieldDelegate {
     
@@ -21,6 +21,7 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         passwordTextField.delegate = self
         // Do any additional setup after loading the view.
         
+        GMSServices.provideAPIKey("AIzaSyAPx222p1RMhFO7PSf-r3Aiiyj1nhgILsY")
     }
     
 
