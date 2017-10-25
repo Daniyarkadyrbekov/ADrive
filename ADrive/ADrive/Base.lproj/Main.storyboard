@@ -116,8 +116,8 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Создать Аккаунт" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMh-Hs-qX3">
-                                <rect key="frame" x="24" y="224" width="327" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <rect key="frame" x="24" y="240.5" width="327" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -137,7 +137,7 @@
                                 <rect key="frame" x="24" y="444" width="327" height="44"/>
                                 <color key="backgroundColor" red="1" green="0.10819184850000001" blue="0.2057511259" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <state key="normal" title="Зарегестрироваться">
+                                <state key="normal" title="Зарегистрироваться">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -202,8 +202,8 @@
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Забыли пароль?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ci2-NR-tAO">
-                                <rect key="frame" x="24" y="224" width="327" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <rect key="frame" x="24" y="240.5" width="327" height="31.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -245,17 +245,17 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mLN-Kl-GZk" kind="relationship" relationship="rootViewController" id="h7C-j0-FH1"/>
+                        <segue destination="mLN-Kl-GZk" kind="relationship" relationship="rootViewController" id="yJE-FJ-7db"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U62-aU-VCN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="679" y="122"/>
         </scene>
-        <!--User Main Controller-->
+        <!--Navigation Controller-->
         <scene sceneID="CG1-Tv-iR9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fbG-K8-ijA" customClass="UserMainController" customModule="ADrive" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fbG-K8-ijA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zId-c3-hb7">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -270,10 +270,10 @@
             </objects>
             <point key="canvasLocation" x="2633" y="-807"/>
         </scene>
-        <!--View Controller-->
+        <!--User Main Controller-->
         <scene sceneID="fIa-gP-lTw">
             <objects>
-                <viewController id="ZZF-PE-SdI" sceneMemberID="viewController">
+                <viewController id="ZZF-PE-SdI" customClass="UserMainController" customModule="ADrive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oIN-5j-jZz"/>
                         <viewControllerLayoutGuide type="bottom" id="E90-OO-ae9"/>
@@ -283,7 +283,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="lv6-wy-cA6"/>
+                    <navigationItem key="navigationItem" id="lv6-wy-cA6">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="egS-gg-TIX">
+                            <connections>
+                                <segue destination="NgZ-AL-Awi" kind="showDetail" id="QMd-JK-7TY"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzy-7Y-dok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
