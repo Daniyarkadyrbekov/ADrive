@@ -98,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqL-KW-eJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1606.5" y="121.5"/>
+            <point key="canvasLocation" x="1606" y="122"/>
         </scene>
         <!--Create Account Controller-->
         <scene sceneID="x7j-hO-Ch9">
@@ -170,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apA-73-zdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2301" y="122"/>
+            <point key="canvasLocation" x="2538" y="121"/>
         </scene>
         <!--Forgot Password Controller-->
         <scene sceneID="kDJ-67-YoG">
@@ -268,7 +268,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ey2-Dr-ebi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2633" y="-807"/>
+            <point key="canvasLocation" x="2406" y="-781"/>
         </scene>
         <!--User Main Controller-->
         <scene sceneID="fIa-gP-lTw">
@@ -289,14 +289,75 @@
                                 <segue destination="NgZ-AL-Awi" kind="showDetail" id="QMd-JK-7TY"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Profile" id="VE7-Kb-U16">
+                            <connections>
+                                <segue destination="DuB-Fr-1lj" kind="show" id="SK0-rR-1f7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzy-7Y-dok" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3424.8000000000002" y="-807.34632683658174"/>
+            <point key="canvasLocation" x="3201" y="-781"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="MHn-bJ-Dc7">
+            <objects>
+                <viewController id="DuB-Fr-1lj" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="alq-N4-UBo"/>
+                        <viewControllerLayoutGuide type="bottom" id="zvF-sC-CTT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XcH-vB-nJb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="esf-I2-snP">
+                                <rect key="frame" x="87" y="72" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="HbR-np-3Yi"/>
+                                    <constraint firstAttribute="height" constant="200" id="vmZ-9Y-csU"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rxz-C8-Nmh">
+                                <rect key="frame" x="87" y="280" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="6Du-Wi-pRt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naw-hE-xK4">
+                                <rect key="frame" x="87" y="328" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="4U7-x6-S7Y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="naw-hE-xK4" firstAttribute="leading" secondItem="esf-I2-snP" secondAttribute="leading" id="5hH-4a-DP1"/>
+                            <constraint firstItem="Rxz-C8-Nmh" firstAttribute="top" secondItem="esf-I2-snP" secondAttribute="bottom" constant="8" id="B03-4b-PAQ"/>
+                            <constraint firstItem="Rxz-C8-Nmh" firstAttribute="leading" secondItem="esf-I2-snP" secondAttribute="leading" id="Gca-cw-PKq"/>
+                            <constraint firstItem="naw-hE-xK4" firstAttribute="trailing" secondItem="esf-I2-snP" secondAttribute="trailing" id="PCx-Jr-ecI"/>
+                            <constraint firstItem="esf-I2-snP" firstAttribute="top" secondItem="alq-N4-UBo" secondAttribute="bottom" constant="8" id="Ub8-cP-J3F"/>
+                            <constraint firstItem="Rxz-C8-Nmh" firstAttribute="trailing" secondItem="esf-I2-snP" secondAttribute="trailing" id="aS8-sT-hzm"/>
+                            <constraint firstItem="esf-I2-snP" firstAttribute="centerX" secondItem="XcH-vB-nJb" secondAttribute="centerX" id="awP-7t-5q1"/>
+                            <constraint firstItem="naw-hE-xK4" firstAttribute="top" secondItem="Rxz-C8-Nmh" secondAttribute="bottom" constant="8" id="gzd-WB-4uh"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9yf-i9-fto" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4303.1999999999998" y="-1482.008995502249"/>
         </scene>
     </scenes>
     <resources>
         <image name="carBackground3" width="1080" height="1920"/>
+        <image name="profileImage" width="200" height="203"/>
     </resources>
 </document>

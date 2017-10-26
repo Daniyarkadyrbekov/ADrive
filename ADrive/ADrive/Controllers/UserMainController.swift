@@ -10,6 +10,16 @@ import UIKit
 import GoogleMaps
 
 class UserMainController: UIViewController {
+    var locations = [Location]()
+    func generateLocations() {
+        var chage: Double
+        for index in 1...10 {
+            chage = Double(index) / 10
+            //print("\(index) change = \(chage)")
+            locations.append(Location(token: "\(index)", long: 37.618423 + chage, lat: 55.751244 - chage))
+        }
+        //print(locations.count)
+    }
     
     let userAcceptButton: UIButton = {
         
@@ -25,21 +35,42 @@ class UserMainController: UIViewController {
         return button
     }()
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        //print(locations.count)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "Карта города"
         
         GMSServices.provideAPIKey("AIzaSyAPx222p1RMhFO7PSf-r3Aiiyj1nhgILsY")
-        // Do any additional setup after loading the view.
         let camera = GMSCameraPosition.camera(withLatitude: 55.751244, longitude: 37.618423, zoom: 10.0)
         let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         
         view = mapView
         
-        view.addSubview(userAcceptButton)
+        var marker = [GMSMarker]()
+        generateLocations()
+        var i = 0
+        for index in locations {
+            marker.append(GMSMarker())
+            marker[i].position = GMSCameraPosition.camera(withLatitude: index.lat, longitude: index.long, zoom: 10).target
+            marker[i].snippet = index.token
+            marker[i].map = mapView
+            i += 1
+        }
+
         
+        
+        view.addSubview(userAcceptButton)
         setUpUserAcceptButton()
+        
+    }
+    
+    func setUpMap() {
         
     }
     

@@ -20,8 +20,6 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         loginTextField.delegate = self
         passwordTextField.delegate = self
         // Do any additional setup after loading the view.
-        
-        GMSServices.provideAPIKey("AIzaSyAPx222p1RMhFO7PSf-r3Aiiyj1nhgILsY")
     }
     
 
