@@ -8,8 +8,12 @@
 
 import UIKit
 import GoogleMaps
+import CoreLocation
 
-class UserMainController: UIViewController {
+
+class UserMainController: UIViewController, CLLocationManagerDelegate {
+    var locationManager = CLLocationManager()
+    var mapView: GMSMapView!
     var locations = [Location]()
     func generateLocations() {
         var chage: Double
@@ -48,29 +52,46 @@ class UserMainController: UIViewController {
         
         GMSServices.provideAPIKey("AIzaSyAPx222p1RMhFO7PSf-r3Aiiyj1nhgILsY")
         let camera = GMSCameraPosition.camera(withLatitude: 55.751244, longitude: 37.618423, zoom: 10.0)
-        let mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
+        mapView.isMyLocationEnabled = true
+        mapView.settings.myLocationButton = true
+        
+        self.locationManager.delegate = self
+        self.locationManager.startUpdatingLocation()
         
         view = mapView
+        
+        
         
         var marker = [GMSMarker]()
         generateLocations()
         var i = 0
         for index in locations {
             marker.append(GMSMarker())
-            marker[i].position = GMSCameraPosition.camera(withLatitude: index.lat, longitude: index.long, zoom: 10).target
+            marker[i].position = CLLocationCoordinate2D(latitude: index.lat, longitude: index.long)
+            marker[i].title = "Алексей 87779651170737"
             marker[i].snippet = index.token
             marker[i].map = mapView
             i += 1
         }
-
         
         
-        view.addSubview(userAcceptButton)
-        setUpUserAcceptButton()
+        
+        //view.addSubview(userAcceptButton)
+        //setUpUserAcceptButton()
         
     }
     
-    func setUpMap() {
+    //Location Manager delegates
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let location = locations.last
+        
+        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
+        
+        self.mapView?.animate(to: camera)
+        //Finally stop updating location otherwise it will come again and again in this delegate
+        self.locationManager.stopUpdatingLocation()
         
     }
     
@@ -88,5 +109,7 @@ class UserMainController: UIViewController {
     func buttonAction(sender: UIButton!) {
         print("Button tapped")
     }
+    
 
 }
+

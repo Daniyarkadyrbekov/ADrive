@@ -13,3 +13,4 @@ struct Location{
     let long: Double
     let lat: Double
 }
+
