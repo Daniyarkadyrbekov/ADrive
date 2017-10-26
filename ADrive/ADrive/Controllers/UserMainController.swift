@@ -12,18 +12,21 @@ import CoreLocation
 
 
 class UserMainController: UIViewController, CLLocationManagerDelegate {
+    //location and Map
     var locationManager = CLLocationManager()
     var mapView: GMSMapView!
+    
+    
+    // Structure should be deleted after backend will be connected
     var locations = [Location]()
     func generateLocations() {
         var chage: Double
         for index in 1...10 {
             chage = Double(index) / 10
-            //print("\(index) change = \(chage)")
             locations.append(Location(token: "\(index)", long: 37.618423 + chage, lat: 55.751244 - chage))
         }
-        //print(locations.count)
     }
+    
     
     let userAcceptButton: UIButton = {
         
@@ -41,8 +44,7 @@ class UserMainController: UIViewController, CLLocationManagerDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        //print(locations.count)
+        // Here gonna check Headers of the user to login him
     }
     
     override func viewDidLoad() {
@@ -61,8 +63,15 @@ class UserMainController: UIViewController, CLLocationManagerDelegate {
         
         view = mapView
         
+        putMarkers()
         
+        view.addSubview(userAcceptButton)
+        setUpUserAcceptButton()
         
+    }
+ 
+    // Marker will be placed same way but with backend
+    func putMarkers() {
         var marker = [GMSMarker]()
         generateLocations()
         var i = 0
@@ -74,20 +83,14 @@ class UserMainController: UIViewController, CLLocationManagerDelegate {
             marker[i].map = mapView
             i += 1
         }
-        
-        
-        
-        //view.addSubview(userAcceptButton)
-        //setUpUserAcceptButton()
-        
     }
     
     //Location Manager delegates
-    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let location = locations.last
         
-        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 17.0)
+        let camera = GMSCameraPosition.camera(withLatitude: (location?.coordinate.latitude)!, longitude: (location?.coordinate.longitude)!, zoom: 13.0)
         
         self.mapView?.animate(to: camera)
         //Finally stop updating location otherwise it will come again and again in this delegate
@@ -98,10 +101,9 @@ class UserMainController: UIViewController, CLLocationManagerDelegate {
     func setUpUserAcceptButton() {
         
         view.addConstraint(NSLayoutConstraint(item: userAcceptButton, attribute: .bottom, relatedBy: .equal, toItem: self.bottomLayoutGuide, attribute:.top, multiplier: 1, constant: -10))
-        
-        view.addConstraint(NSLayoutConstraint(item: userAcceptButton, attribute: .leadingMargin, relatedBy: .equal, toItem: view, attribute: .leadingMargin, multiplier: 1, constant: 10))
-        view.addConstraint(NSLayoutConstraint(item: userAcceptButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute,multiplier: 1, constant: 80))
-        view.addConstraint(NSLayoutConstraint(item: userAcceptButton, attribute: .trailingMargin, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1, constant: -10))
+        view.addConstraint(NSLayoutConstraint(item: userAcceptButton, attribute: .leadingMargin, relatedBy: .equal, toItem: view, attribute: .leadingMargin, multiplier: 1, constant: 20))
+        view.addConstraint(NSLayoutConstraint(item: userAcceptButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute,multiplier: 1, constant: 60))
+        view.addConstraint(NSLayoutConstraint(item: userAcceptButton, attribute: .trailingMargin, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1, constant: -60))
         
     }
    
