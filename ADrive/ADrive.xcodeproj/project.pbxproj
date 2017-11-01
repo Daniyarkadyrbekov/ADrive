@@ -17,7 +17,7 @@
 		2897C7CA1F8F6B2200AB76B0 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */; };
 		2897C7CC1F8F6CF600AB76B0 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */; };
 		28DFC4681FA1FFC5009739D6 /* LocationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFC4671FA1FFC5009739D6 /* LocationsModel.swift */; };
-		86973E415BAF48025CD48078 /* libPods-ADrive.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5540972116032F46B669EC3D /* libPods-ADrive.a */; };
+		91ED72437DE3E7747EE55D6C /* Pods_ADrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C30115803FE460D9178201E /* Pods_ADrive.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		28DFC4671FA1FFC5009739D6 /* LocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsModel.swift; sourceTree = "<group>"; };
-		5540972116032F46B669EC3D /* libPods-ADrive.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ADrive.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C30115803FE460D9178201E /* Pods_ADrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED05C58104D2815C308A0A8 /* Pods-ADrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADrive/Pods-ADrive.debug.xcconfig"; sourceTree = "<group>"; };
 		E099CFB295107EBE7F94AF83 /* Pods-ADrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADrive.release.xcconfig"; path = "Pods/Target Support Files/Pods-ADrive/Pods-ADrive.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,7 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				86973E415BAF48025CD48078 /* libPods-ADrive.a in Frameworks */,
+				91ED72437DE3E7747EE55D6C /* Pods_ADrive.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,7 +122,7 @@
 		E8FA359083226BD365D1D18E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5540972116032F46B669EC3D /* libPods-ADrive.a */,
+				3C30115803FE460D9178201E /* Pods_ADrive.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

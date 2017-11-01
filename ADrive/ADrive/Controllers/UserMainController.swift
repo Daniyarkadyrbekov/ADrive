@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
-
+import Alamofire
 
 class UserMainController: UIViewController, CLLocationManagerDelegate {
     //location and Map
