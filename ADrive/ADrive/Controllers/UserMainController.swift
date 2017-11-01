@@ -11,7 +11,7 @@ import GoogleMaps
 import CoreLocation
 import Alamofire
 
-class UserMainController: UIViewController, CLLocationManagerDelegate {
+class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     //location and Map
     var locationManager = CLLocationManager()
     var mapView: GMSMapView!
@@ -57,6 +57,7 @@ class UserMainController: UIViewController, CLLocationManagerDelegate {
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
         mapView.isMyLocationEnabled = true
         mapView.settings.myLocationButton = true
+        mapView.delegate = self
         
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
@@ -110,6 +111,22 @@ class UserMainController: UIViewController, CLLocationManagerDelegate {
     
     func buttonAction(sender: UIButton!) {
         print("Button tapped")
+    }
+    
+    // MARK: GMSMapViewDelegate
+    
+    func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
+        print("You tapped at \(coordinate.latitude), \(coordinate.longitude)")
+    }
+    func mapView(_ mapView: GMSMapView, didTap marker: GMSMarker) -> Bool {
+        self.performSegue(withIdentifier: "MarkerSegue", sender: marker)
+        return true
+    }
+    
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if "MarkerSegue" == segue.identifier {
+            print("segue Works")
+        }
     }
     
 
