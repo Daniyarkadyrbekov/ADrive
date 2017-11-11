@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		280A43A21FAA8F1000B7305D /* DistanceTableControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A43A11FAA8F1000B7305D /* DistanceTableControllerTableViewController.swift */; };
 		282D1A4C1F9D1CE40075E97F /* UserMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282D1A4B1F9D1CE40075E97F /* UserMainController.swift */; };
 		282F17B11F85710B00D3A5DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F17B01F85710B00D3A5DE /* AppDelegate.swift */; };
 		282F17B31F85710B00D3A5DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F17B21F85710B00D3A5DE /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		280A43A11FAA8F1000B7305D /* DistanceTableControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceTableControllerTableViewController.swift; sourceTree = "<group>"; };
 		282D1A4B1F9D1CE40075E97F /* UserMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainController.swift; sourceTree = "<group>"; };
 		282F17AD1F85710B00D3A5DE /* ADrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282F17B01F85710B00D3A5DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 				2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */,
 				2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */,
 				282D1A4B1F9D1CE40075E97F /* UserMainController.swift */,
+				280A43A11FAA8F1000B7305D /* DistanceTableControllerTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2897C7CC1F8F6CF600AB76B0 /* ForgotPasswordController.swift in Sources */,
+				280A43A21FAA8F1000B7305D /* DistanceTableControllerTableViewController.swift in Sources */,
 				282F17B31F85710B00D3A5DE /* ViewController.swift in Sources */,
 				2897C7C61F8E541200AB76B0 /* TestViewController.swift in Sources */,
 				282D1A4C1F9D1CE40075E97F /* UserMainController.swift in Sources */,

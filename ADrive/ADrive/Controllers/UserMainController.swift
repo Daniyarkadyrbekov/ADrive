@@ -15,6 +15,10 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     //location and Map
     var locationManager = CLLocationManager()
     var mapView: GMSMapView!
+    var marker = [GMSMarker]()
+    
+    let profileNames = ["Алексей","Сергей","Миша"]
+    let profileNumbers = ["89009909099","89651110101","89997778877"]
     
     
     // Structure should be deleted after backend will be connected
@@ -39,6 +43,20 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         button.layer.masksToBounds = true
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        return button
+    }()
+    
+    let userTableDistanceButton: UIButton = {
+        
+        let button = UIButton(type: .system)
+        button.backgroundColor = .red
+        button.setTitle("Таблица", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 6
+        button.layer.masksToBounds = true
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
+        button.addTarget(self, action: #selector(tableButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -67,19 +85,20 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         putMarkers()
         
         view.addSubview(userAcceptButton)
+        view.addSubview(userTableDistanceButton)
         setUpUserAcceptButton()
+        setUpUserTableDistancetButton()
         
     }
- 
+    
     // Marker will be placed same way but with backend
     func putMarkers() {
-        var marker = [GMSMarker]()
         generateLocations()
         var i = 0
         for index in locations {
             marker.append(GMSMarker())
             marker[i].position = CLLocationCoordinate2D(latitude: index.lat, longitude: index.long)
-            marker[i].title = "Алексей 87779651170737"
+            marker[i].title = "\(profileNames[Int(arc4random_uniform(3))]) \(profileNumbers[Int(arc4random_uniform(3))])"
             marker[i].snippet = index.token
             marker[i].map = mapView
             i += 1
@@ -99,6 +118,15 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         
     }
     
+    func setUpUserTableDistancetButton() {
+        
+        view.addConstraint(NSLayoutConstraint(item: userTableDistanceButton, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide, attribute:.bottom, multiplier: 1, constant: 30))
+        view.addConstraint(NSLayoutConstraint(item: userTableDistanceButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute,multiplier: 1, constant: 40))
+        view.addConstraint(NSLayoutConstraint(item: userTableDistanceButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute,multiplier: 1, constant: 60))
+        view.addConstraint(NSLayoutConstraint(item: userTableDistanceButton, attribute: .trailingMargin, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1, constant: 0))
+        
+    }
+    
     func setUpUserAcceptButton() {
         
         view.addConstraint(NSLayoutConstraint(item: userAcceptButton, attribute: .bottom, relatedBy: .equal, toItem: self.bottomLayoutGuide, attribute:.top, multiplier: 1, constant: -10))
@@ -113,6 +141,10 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         print("Button tapped")
     }
     
+    func tableButtonAction(sender: UIButton!){
+        self.performSegue(withIdentifier: "TableDistanceSegue", sender: nil)
+    }
+    
     // MARK: GMSMapViewDelegate
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
@@ -123,9 +155,14 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         return true
     }
     
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if "MarkerSegue" == segue.identifier {
-            print("segue Works")
+            print("MarkerSegue Works")
+        }
+        if "TableDistanceSegue" == segue.identifier {
+            if let vc =  segue.destination as? DistanceTableControllerTableViewController {
+                vc.marker = self.marker
+            }
         }
     }
     
