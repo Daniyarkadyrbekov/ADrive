@@ -16,6 +16,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        if let navViewController = window?.rootViewController as? UINavigationController {
+            if let userMainViewController = navViewController.viewControllers.first as? UserMainController{
+                userMainViewController.userStateModelController = UserStateModelController()
+            }
+        }
+        
         return true
     }
 

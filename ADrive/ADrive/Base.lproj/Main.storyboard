@@ -63,7 +63,7 @@
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Wjv-CL-Rha" kind="show" id="qGe-qU-lRS"/>
+                                    <segue destination="Wjv-CL-Rha" kind="show" identifier="RegistrationView" id="qGe-qU-lRS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -141,6 +141,9 @@
                                 <state key="normal" title="Зарегистрироваться">
                                     <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerButtonPresssed:" destination="Wjv-CL-Rha" eventType="touchUpInside" id="CY3-F9-ijO"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -167,6 +170,7 @@
                     <connections>
                         <outlet property="loginTextField" destination="94A-UX-rat" id="ZYT-xC-T3z"/>
                         <outlet property="passwordTextField" destination="PKv-a1-LnV" id="xhc-tk-wac"/>
+                        <segue destination="fbG-K8-ijA" kind="showDetail" identifier="ShowMainController" id="K7P-os-CMk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apA-73-zdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -246,7 +250,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="mLN-Kl-GZk" kind="relationship" relationship="rootViewController" id="yJE-FJ-7db"/>
+                        <segue destination="mLN-Kl-GZk" kind="relationship" relationship="rootViewController" id="m9g-e9-K06"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U62-aU-VCN" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -287,7 +291,7 @@
                     <navigationItem key="navigationItem" id="lv6-wy-cA6">
                         <barButtonItem key="leftBarButtonItem" title="Logout" id="egS-gg-TIX">
                             <connections>
-                                <segue destination="NgZ-AL-Awi" kind="showDetail" id="QMd-JK-7TY"/>
+                                <action selector="LogoutButtonPressed:" destination="ZZF-PE-SdI" id="G9E-R6-0VS"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Profile" id="VE7-Kb-U16">
@@ -299,6 +303,7 @@
                     <connections>
                         <segue destination="4LJ-6L-SOo" kind="show" identifier="MarkerSegue" id="I5e-20-2Il"/>
                         <segue destination="SSu-3u-ayi" kind="show" identifier="TableDistanceSegue" id="X2c-uY-9ep"/>
+                        <segue destination="NgZ-AL-Awi" kind="showDetail" identifier="LogoutSegue" id="6NZ-zB-VYc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uzy-7Y-dok" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -429,4 +434,7 @@
         <image name="carBackground3" width="1080" height="1920"/>
         <image name="profileImage" width="200" height="203"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="K7P-os-CMk"/>
+    </inferredMetricsTieBreakers>
 </document>

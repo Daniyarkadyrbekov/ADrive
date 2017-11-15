@@ -17,6 +17,9 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     var mapView: GMSMapView!
     var marker = [GMSMarker]()
     
+    //User State
+    var userStateModelController: UserStateModelController!
+    
     let profileNames = ["Алексей","Сергей","Миша"]
     let profileNumbers = ["89009909099","89651110101","89997778877"]
     
@@ -60,9 +63,16 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         return button
     }()
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
         // Here gonna check Headers of the user to login him
+        let userState = userStateModelController.userState
+        
+        if let token = userState.token {
+            print(token)
+        }else {
+            self.performSegue(withIdentifier: "LogoutSegue", sender: nil)
+        }
     }
     
     override func viewDidLoad() {
@@ -145,6 +155,10 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         self.performSegue(withIdentifier: "TableDistanceSegue", sender: nil)
     }
     
+    @IBAction func LogoutButtonPressed(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "LogoutSegue", sender: nil)
+    }
+    
     // MARK: GMSMapViewDelegate
     
     func mapView(_ mapView: GMSMapView, didTapAt coordinate: CLLocationCoordinate2D) {
@@ -162,6 +176,19 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         if "TableDistanceSegue" == segue.identifier {
             if let vc =  segue.destination as? DistanceTableControllerTableViewController {
                 vc.marker = self.marker
+            }
+        }
+        if "LogoutSegue" == segue.identifier {
+            if let nvc =  segue.destination as? UINavigationController {
+                if let logoutViewController = nvc.viewControllers.first as? TestViewController{
+                    
+                    var userState = userStateModelController.userState
+                    if let _ = userState.token {
+                        userState.token = nil
+                    }
+                    
+                    logoutViewController.userStateModelController = userStateModelController
+                }
             }
         }
     }

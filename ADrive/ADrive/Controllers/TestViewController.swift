@@ -14,6 +14,7 @@ class TestViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    var userStateModelController: UserStateModelController!
 
     
     let headers: HTTPHeaders = [
@@ -77,8 +78,23 @@ class TestViewController: UIViewController, UITextFieldDelegate {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowMainController" {
-            if let courses = sender as? JsonObj {
-                print(courses)
+            if let nvc = segue.destination as? UINavigationController{
+                if let dvc = nvc.viewControllers.first as? UserMainController{
+                    if let courses = sender as? JsonObj {
+                        if let token = courses.res{
+                            var newState = UserStateModel()
+                            newState.token = token
+                            userStateModelController.userState = newState
+                            dvc.userStateModelController = userStateModelController
+                        }
+                    }
+                }
+            }
+        }
+        
+        if segue.identifier == "RegistrationView" {
+            if let dvc = segue.destination as? CreateAccountController {
+                dvc.userStateModelController = userStateModelController
             }
         }
     }
