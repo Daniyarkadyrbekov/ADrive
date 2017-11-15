@@ -33,11 +33,11 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     @IBAction func registerButtonPresssed(_ sender: UIButton) {
         
         guard let login = loginTextField.text, login != "" else {
-            print("login is empty")
+            errorAlert()
             return
         }
         guard let password = passwordTextField.text, password != "" else {
-            print("password is empty")
+            errorAlert()
             return
         }
         let parameters: [String: String] = [
@@ -52,7 +52,7 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
                     do {
                         let courses = try JSONDecoder().decode(JsonObj.self, from: json)
                         guard courses.err == nil else {
-                            print("User Creation error try again")
+                            self.errorAlert()
                             return
                         }
                         self.makeAuthorisation(with: parameters)
@@ -102,6 +102,17 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    func errorAlert() {
+        // create the alert
+        let alert = UIAlertController(title: "Error", message: "Что то пошло не так(", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

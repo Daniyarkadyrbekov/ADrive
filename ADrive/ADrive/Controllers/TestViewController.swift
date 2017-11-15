@@ -28,11 +28,11 @@ class TestViewController: UIViewController, UITextFieldDelegate {
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
         guard let login = loginTextField.text, login != "" else {
-            print("login is empty")
+            errorAlert()
             return
         }
         guard let password = passwordTextField.text, password != "" else {
-            print("password is empty")
+            errorAlert()
             return
         }
         let parameters: [String: String] = [
@@ -45,7 +45,7 @@ class TestViewController: UIViewController, UITextFieldDelegate {
                     do {
                         let courses = try JSONDecoder().decode(JsonObj.self, from: json)
                         guard courses.err == nil else {
-                            print("User login error")
+                            self.errorAlert()
                             return
                         }
                        self.performSegue(withIdentifier: "ShowMainController", sender: courses)
@@ -62,15 +62,6 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         
         loginTextField.delegate = self
         passwordTextField.delegate = self
-        
-//        Alamofire.request("https://warm-castle-66534.herokuapp.com/auth", headers: headers)
-//            .responseJSON { response in
-//                print(response)
-//        }
-//        Alamofire.request("https://warm-castle-66534.herokuapp.com/auth",method: .post, parameters: parameters, encoding: JSONEncoding.default)
-//            .responseJSON { response in
-//                print(response)
-//        }
         
     }
     
@@ -102,5 +93,16 @@ class TestViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    func errorAlert() {
+        // create the alert
+        let alert = UIAlertController(title: "Error", message: "Что то пошло не так(", preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        
+        // show the alert
+        self.present(alert, animated: true, completion: nil)
     }
 }
