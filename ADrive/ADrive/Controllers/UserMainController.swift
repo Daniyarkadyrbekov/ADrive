@@ -19,6 +19,28 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     //User State
     var userStateModelController: UserStateModelController!
+    struct UserSocial: Decodable {
+        let fb: String?
+        let instagram: String?
+        let vk: String?
+    }
+    
+    struct User: Decodable {
+        let __v: Int?
+        let _id: String?
+        let createdAt: String?
+        let deviceToken: String?
+        let email: String?
+        let passwordHash: String?
+        let salt: String?
+        let social: UserSocial?
+        let updatedAt: String?
+    }
+    
+    struct JsonObj: Decodable {
+        let err: Int?
+        let res: User?
+    }
     
     let profileNames = ["Алексей","Сергей","Миша"]
     let profileNumbers = ["89009909099","89651110101","89997778877"]
@@ -69,7 +91,29 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         let userState = userStateModelController.userState
         
         if let token = userState.token {
-            print(token)
+            //Get to auth to check is token valid
+            let headers: HTTPHeaders = [
+                "token": token
+            ]
+            
+            Alamofire.request("https://warm-castle-66534.herokuapp.com/auth",method: .get, headers: headers)
+                .responseJSON { response in
+                    if let json = response.data {
+                        // print(json)
+                        do {
+                            let userResultObject = try JSONDecoder().decode(JsonObj.self, from: json)
+                            guard userResultObject.err == nil else {
+                                self.performSegue(withIdentifier: "LogoutSegue", sender: nil)
+                                return
+                            }
+                            print(userResultObject.res?.email ?? "nil")
+                        }catch let jsonErr {
+                            print("Error serializing json:", jsonErr)
+                            self.performSegue(withIdentifier: "LogoutSegue", sender: nil)
+                        }
+                    }
+                    //print(response)
+            }
         }else {
             self.performSegue(withIdentifier: "LogoutSegue", sender: nil)
         }
@@ -134,7 +178,6 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         view.addConstraint(NSLayoutConstraint(item: userTableDistanceButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute,multiplier: 1, constant: 40))
         view.addConstraint(NSLayoutConstraint(item: userTableDistanceButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute,multiplier: 1, constant: 60))
         view.addConstraint(NSLayoutConstraint(item: userTableDistanceButton, attribute: .trailingMargin, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1, constant: 0))
-        
     }
     
     func setUpUserAcceptButton() {
@@ -180,7 +223,7 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         }
         if "LogoutSegue" == segue.identifier {
             if let nvc =  segue.destination as? UINavigationController {
-                if let logoutViewController = nvc.viewControllers.first as? TestViewController{
+                if let logoutViewController = nvc.viewControllers.first as? LoginController{
                     
                     var userState = userStateModelController.userState
                     if let _ = userState.token {
@@ -192,7 +235,5 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             }
         }
     }
-    
-
 }
 

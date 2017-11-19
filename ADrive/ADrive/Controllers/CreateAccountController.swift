@@ -13,6 +13,9 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginTextField: UITextField!
+    @IBOutlet weak var repeatPasswordTextField: UITextField!
+    @IBOutlet weak var surnameTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     
     var userStateModelController: UserStateModelController!
     
@@ -26,36 +29,64 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
         
         loginTextField.delegate = self
         passwordTextField.delegate = self
+        repeatPasswordTextField.delegate = self
+        surnameTextField.delegate = self
+        nameTextField.delegate = self
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateAccountController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
+    }
+    
+    private func fieldsAreCorrect() -> Bool {
+        guard let login = loginTextField.text, login != "" else {
+            errorAlert(withMessage: "поле email пустое")
+            return false
+        }
+        guard let password = passwordTextField.text, password != "" else {
+            errorAlert(withMessage: "поле пароля пустое")
+            return false
+        }
+        guard let surname = surnameTextField.text, surname != "" else {
+            errorAlert(withMessage: "поле фамилии пустое")
+            return false
+        }
+        guard let name = nameTextField.text, name != "" else {
+            errorAlert(withMessage: "поле имени пустое")
+            return false
+        }
+        guard let repeatPassword = repeatPasswordTextField.text, password == repeatPassword  else {
+            errorAlert(withMessage: "пароли не идентичны")
+            return false
+        }
+        
+        
+        return true
     }
 
     @IBAction func registerButtonPresssed(_ sender: UIButton) {
         
-        guard let login = loginTextField.text, login != "" else {
-            errorAlert()
+        guard fieldsAreCorrect() else{
             return
         }
-        guard let password = passwordTextField.text, password != "" else {
-            errorAlert()
-            return
-        }
+        
         let parameters: [String: String] = [
-            "email": login,
-            "password": password
+            "email": (loginTextField?.text)!,
+            "password": (passwordTextField?.text)!
         ]
         
         Alamofire.request("https://warm-castle-66534.herokuapp.com/register",method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in
+                //print(response)
                 if let json = response.data {
-                   // print(json)
                     do {
-                        let courses = try JSONDecoder().decode(JsonObj.self, from: json)
-                        guard courses.err == nil else {
-                            self.errorAlert()
-                            return
+                        let jsonErr = try JSONSerialization.jsonObject(with: json, options: .mutableContainers) as! Dictionary<String, Any>
+                        if let _ = jsonErr["err"] as? Dictionary<String, Any> {
+                            self.errorAlert(withMessage: "Ошибка Регистрации. Попробуйте использовать другой email")
+                        }else{
+                            let _ = try JSONDecoder().decode(JsonObj.self, from: json)
+                            self.makeAuthorisation(with: parameters)
                         }
-                        self.makeAuthorisation(with: parameters)
                     }catch let jsonErr {
                         print("Error serializing json:", jsonErr)
                     }
@@ -99,14 +130,19 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
     }
+    func dismissKeyboard() {
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
+    }
     
-    func errorAlert() {
+    func errorAlert(withMessage error: String) {
         // create the alert
-        let alert = UIAlertController(title: "Error", message: "Что то пошло не так(", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Error", message: error, preferredStyle: UIAlertControllerStyle.alert)
         
         // add an action (button)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))

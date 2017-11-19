@@ -16,7 +16,7 @@
 		2863B9651FB851F600D80FF8 /* UserStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863B9641FB851F600D80FF8 /* UserStateModel.swift */; };
 		2863B9681FB8529800D80FF8 /* UserStateModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863B9671FB8529700D80FF8 /* UserStateModelController.swift */; };
 		2863B96A1FBC6F2F00D80FF8 /* UserStandartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863B9691FBC6F2F00D80FF8 /* UserStandartController.swift */; };
-		2897C7C61F8E541200AB76B0 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C41F8E541200AB76B0 /* TestViewController.swift */; };
+		2897C7C61F8E541200AB76B0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C41F8E541200AB76B0 /* LoginController.swift */; };
 		2897C7CA1F8F6B2200AB76B0 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */; };
 		2897C7CC1F8F6CF600AB76B0 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */; };
 		28DFC4681FA1FFC5009739D6 /* LocationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFC4671FA1FFC5009739D6 /* LocationsModel.swift */; };
@@ -35,7 +35,7 @@
 		2863B9641FB851F600D80FF8 /* UserStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateModel.swift; sourceTree = "<group>"; };
 		2863B9671FB8529700D80FF8 /* UserStateModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateModelController.swift; sourceTree = "<group>"; };
 		2863B9691FBC6F2F00D80FF8 /* UserStandartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStandartController.swift; sourceTree = "<group>"; };
-		2897C7C41F8E541200AB76B0 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		2897C7C41F8E541200AB76B0 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		28DFC4671FA1FFC5009739D6 /* LocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsModel.swift; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 		2897C7BB1F8E444D00AB76B0 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2897C7C41F8E541200AB76B0 /* TestViewController.swift */,
+				2897C7C41F8E541200AB76B0 /* LoginController.swift */,
 				2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */,
 				2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */,
 				282D1A4B1F9D1CE40075E97F /* UserMainController.swift */,
@@ -282,7 +282,7 @@
 				2897C7CC1F8F6CF600AB76B0 /* ForgotPasswordController.swift in Sources */,
 				2863B9651FB851F600D80FF8 /* UserStateModel.swift in Sources */,
 				280A43A21FAA8F1000B7305D /* DistanceTableControllerTableViewController.swift in Sources */,
-				2897C7C61F8E541200AB76B0 /* TestViewController.swift in Sources */,
+				2897C7C61F8E541200AB76B0 /* LoginController.swift in Sources */,
 				282D1A4C1F9D1CE40075E97F /* UserMainController.swift in Sources */,
 				282F17B11F85710B00D3A5DE /* AppDelegate.swift in Sources */,
 				2897C7CA1F8F6B2200AB76B0 /* CreateAccountController.swift in Sources */,

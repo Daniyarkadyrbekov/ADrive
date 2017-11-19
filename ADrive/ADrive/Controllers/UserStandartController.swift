@@ -111,7 +111,7 @@ class UserStandartController: UIViewController, CLLocationManagerDelegate, GMSMa
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if "LogoutSegue" == segue.identifier {
             if let nvc =  segue.destination as? UINavigationController {
-                if let logoutViewController = nvc.viewControllers.first as? TestViewController{
+                if let logoutViewController = nvc.viewControllers.first as? LoginController{
                     
                     var userState = userStateModelController.userState
                     if let _ = userState.token {

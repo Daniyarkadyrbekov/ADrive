@@ -10,7 +10,7 @@ import UIKit
 import GoogleMaps
 import Alamofire
 
-class TestViewController: UIViewController, UITextFieldDelegate {
+class LoginController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -63,6 +63,9 @@ class TestViewController: UIViewController, UITextFieldDelegate {
         loginTextField.delegate = self
         passwordTextField.delegate = self
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+        
     }
     
     
@@ -93,6 +96,10 @@ class TestViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     func errorAlert() {
