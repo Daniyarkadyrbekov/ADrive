@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		280A43A21FAA8F1000B7305D /* DistanceTableControllerTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280A43A11FAA8F1000B7305D /* DistanceTableControllerTableViewController.swift */; };
+		280C086A1FC1CC4300CD86CB /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280C08691FC1CC4300CD86CB /* ProfileController.swift */; };
 		282D1A4C1F9D1CE40075E97F /* UserMainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282D1A4B1F9D1CE40075E97F /* UserMainController.swift */; };
 		282F17B11F85710B00D3A5DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 282F17B01F85710B00D3A5DE /* AppDelegate.swift */; };
 		282F17B61F85710C00D3A5DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 282F17B41F85710C00D3A5DE /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 		2863B9651FB851F600D80FF8 /* UserStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863B9641FB851F600D80FF8 /* UserStateModel.swift */; };
 		2863B9681FB8529800D80FF8 /* UserStateModelController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863B9671FB8529700D80FF8 /* UserStateModelController.swift */; };
 		2863B96A1FBC6F2F00D80FF8 /* UserStandartController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2863B9691FBC6F2F00D80FF8 /* UserStandartController.swift */; };
+		2887437F1FC32D8200C8FB0D /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2887437E1FC32D8200C8FB0D /* UserData.swift */; };
 		2897C7C61F8E541200AB76B0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C41F8E541200AB76B0 /* LoginController.swift */; };
 		2897C7CA1F8F6B2200AB76B0 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */; };
 		2897C7CC1F8F6CF600AB76B0 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */; };
@@ -25,6 +27,7 @@
 
 /* Begin PBXFileReference section */
 		280A43A11FAA8F1000B7305D /* DistanceTableControllerTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceTableControllerTableViewController.swift; sourceTree = "<group>"; };
+		280C08691FC1CC4300CD86CB /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		282D1A4B1F9D1CE40075E97F /* UserMainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserMainController.swift; sourceTree = "<group>"; };
 		282F17AD1F85710B00D3A5DE /* ADrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		282F17B01F85710B00D3A5DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -35,9 +38,11 @@
 		2863B9641FB851F600D80FF8 /* UserStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateModel.swift; sourceTree = "<group>"; };
 		2863B9671FB8529700D80FF8 /* UserStateModelController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStateModelController.swift; sourceTree = "<group>"; };
 		2863B9691FBC6F2F00D80FF8 /* UserStandartController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStandartController.swift; sourceTree = "<group>"; };
+		2887437E1FC32D8200C8FB0D /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		2897C7C41F8E541200AB76B0 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
+		28991A421FC367590085CB0C /* ADrive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ADrive.entitlements; sourceTree = "<group>"; };
 		28DFC4671FA1FFC5009739D6 /* LocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsModel.swift; sourceTree = "<group>"; };
 		3C30115803FE460D9178201E /* Pods_ADrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED05C58104D2815C308A0A8 /* Pods-ADrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADrive/Pods-ADrive.debug.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +82,7 @@
 		282F17AF1F85710B00D3A5DE /* ADrive */ = {
 			isa = PBXGroup;
 			children = (
+				28991A421FC367590085CB0C /* ADrive.entitlements */,
 				2863B9661FB8522700D80FF8 /* ModelControllers */,
 				28DFC4661FA1FF97009739D6 /* Models */,
 				2897C7BB1F8E444D00AB76B0 /* Controllers */,
@@ -104,6 +110,7 @@
 				282D1A4B1F9D1CE40075E97F /* UserMainController.swift */,
 				280A43A11FAA8F1000B7305D /* DistanceTableControllerTableViewController.swift */,
 				2863B9691FBC6F2F00D80FF8 /* UserStandartController.swift */,
+				280C08691FC1CC4300CD86CB /* ProfileController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -123,6 +130,7 @@
 			children = (
 				28DFC4671FA1FFC5009739D6 /* LocationsModel.swift */,
 				2863B9641FB851F600D80FF8 /* UserStateModel.swift */,
+				2887437E1FC32D8200C8FB0D /* UserData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,8 +187,13 @@
 				TargetAttributes = {
 					282F17AC1F85710B00D3A5DE = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = ST93RGEW47;
+						DevelopmentTeam = DB27N6GZDY;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -284,7 +297,9 @@
 				280A43A21FAA8F1000B7305D /* DistanceTableControllerTableViewController.swift in Sources */,
 				2897C7C61F8E541200AB76B0 /* LoginController.swift in Sources */,
 				282D1A4C1F9D1CE40075E97F /* UserMainController.swift in Sources */,
+				2887437F1FC32D8200C8FB0D /* UserData.swift in Sources */,
 				282F17B11F85710B00D3A5DE /* AppDelegate.swift in Sources */,
+				280C086A1FC1CC4300CD86CB /* ProfileController.swift in Sources */,
 				2897C7CA1F8F6B2200AB76B0 /* CreateAccountController.swift in Sources */,
 				28DFC4681FA1FFC5009739D6 /* LocationsModel.swift in Sources */,
 				2863B96A1FBC6F2F00D80FF8 /* UserStandartController.swift in Sources */,
@@ -411,10 +426,11 @@
 			baseConfigurationReference = BED05C58104D2815C308A0A8 /* Pods-ADrive.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ST93RGEW47;
+				CODE_SIGN_ENTITLEMENTS = ADrive/ADrive.entitlements;
+				DEVELOPMENT_TEAM = DB27N6GZDY;
 				INFOPLIST_FILE = ADrive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = KadyrbekovDaniyar.ADrive;
+				PRODUCT_BUNDLE_IDENTIFIER = Daniyar.ADrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -425,10 +441,11 @@
 			baseConfigurationReference = E099CFB295107EBE7F94AF83 /* Pods-ADrive.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ST93RGEW47;
+				CODE_SIGN_ENTITLEMENTS = ADrive/ADrive.entitlements;
+				DEVELOPMENT_TEAM = DB27N6GZDY;
 				INFOPLIST_FILE = ADrive/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = KadyrbekovDaniyar.ADrive;
+				PRODUCT_BUNDLE_IDENTIFIER = Daniyar.ADrive;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

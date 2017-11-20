@@ -72,7 +72,9 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
         
         let parameters: [String: String] = [
             "email": (loginTextField?.text)!,
-            "password": (passwordTextField?.text)!
+            "password": (passwordTextField?.text)!,
+            "first_name": (nameTextField?.text)!,
+            "last_name": (surnameTextField?.text)!,
         ]
         
         Alamofire.request("https://warm-castle-66534.herokuapp.com/register",method: .post, parameters: parameters, encoding: JSONEncoding.default)

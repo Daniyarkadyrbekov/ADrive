@@ -19,28 +19,13 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     //User State
     var userStateModelController: UserStateModelController!
-    struct UserSocial: Decodable {
-        let fb: String?
-        let instagram: String?
-        let vk: String?
-    }
-    
-    struct User: Decodable {
-        let __v: Int?
-        let _id: String?
-        let createdAt: String?
-        let deviceToken: String?
-        let email: String?
-        let passwordHash: String?
-        let salt: String?
-        let social: UserSocial?
-        let updatedAt: String?
-    }
     
     struct JsonObj: Decodable {
         let err: Int?
-        let res: User?
+        let res: UserData?
     }
+    
+    var profileData: JsonObj?
     
     let profileNames = ["Алексей","Сергей","Миша"]
     let profileNumbers = ["89009909099","89651110101","89997778877"]
@@ -106,6 +91,7 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
                                 self.performSegue(withIdentifier: "LogoutSegue", sender: nil)
                                 return
                             }
+                            self.profileData = userResultObject
                             print(userResultObject.res?.email ?? "nil")
                         }catch let jsonErr {
                             print("Error serializing json:", jsonErr)
@@ -219,6 +205,15 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         if "TableDistanceSegue" == segue.identifier {
             if let vc =  segue.destination as? DistanceTableControllerTableViewController {
                 vc.marker = self.marker
+            }
+        }
+        if "ProfileSegue" == segue.identifier {
+            if let vc =  segue.destination as? ProfileController {
+                if let profileData = self.profileData {
+                    vc.profileEmail.text = profileData.res?.email
+                    vc.profileName.text = profileData.res?._id
+                    vc.profileImage.image = UIImage(imageLiteralResourceName: "TestImage1")
+                }
             }
         }
         if "LogoutSegue" == segue.identifier {
