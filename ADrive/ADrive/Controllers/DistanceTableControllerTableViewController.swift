@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import Alamofire
 
 class DistanceTableControllerTableViewController: UITableViewController {
     
@@ -16,6 +17,11 @@ class DistanceTableControllerTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        Alamofire.request("https://warm-castle-66534.herokuapp.com/push",method: .post)
+            .responseJSON { response in
+                print(response)
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

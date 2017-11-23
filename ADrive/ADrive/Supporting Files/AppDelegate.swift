@@ -47,8 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tokenParts = deviceToken.map { data -> String in
             return String(format: "%02.2hhx", data)
         }
-        
+        var userDeviceToken = UserStateModel()
         let token = tokenParts.joined()
+        userDeviceToken.deviceToken = token
         print("Device Token: \(token)")
     }
     

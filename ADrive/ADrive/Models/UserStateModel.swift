@@ -20,4 +20,15 @@ struct UserStateModel {
             return token
         }
     }
+    var deviceToken: String?{
+        set {
+            let defaults = UserDefaults.standard
+            defaults.set(newValue, forKey: "deviceToken")
+        }
+        get {
+            let defaults = UserDefaults.standard
+            let token = defaults.object(forKey: "deviceToken") as? String
+            return token
+        }
+    }
 }

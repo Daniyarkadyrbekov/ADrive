@@ -30,8 +30,6 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     let profileNames = ["Алексей","Сергей","Миша"]
     let profileNumbers = ["89009909099","89651110101","89997778877"]
     
-    
-    // Structure should be deleted after backend will be connected
     var locations = [Location]()
     func generateLocations() {
         var chage: Double
@@ -84,7 +82,6 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
             Alamofire.request("https://warm-castle-66534.herokuapp.com/auth",method: .get, headers: headers)
                 .responseJSON { response in
                     if let json = response.data {
-                        // print(json)
                         do {
                             let userResultObject = try JSONDecoder().decode(JsonObj.self, from: json)
                             guard userResultObject.err == nil else {
@@ -98,18 +95,13 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
                             self.performSegue(withIdentifier: "LogoutSegue", sender: nil)
                         }
                     }
-                    //print(response)
             }
         }else {
             self.performSegue(withIdentifier: "LogoutSegue", sender: nil)
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.title = "Карта города"
-        
+    override func loadView() {
         GMSServices.provideAPIKey("AIzaSyAPx222p1RMhFO7PSf-r3Aiiyj1nhgILsY")
         let camera = GMSCameraPosition.camera(withLatitude: 55.751244, longitude: 37.618423, zoom: 10.0)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
@@ -123,6 +115,12 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         view = mapView
         
         putMarkers()
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.title = "Карта города"
         
         view.addSubview(userAcceptButton)
         view.addSubview(userTableDistanceButton)
@@ -210,9 +208,7 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         if "ProfileSegue" == segue.identifier {
             if let vc =  segue.destination as? ProfileController {
                 if let profileData = self.profileData {
-                    vc.profileEmail.text = profileData.res?.email
-                    vc.profileName.text = profileData.res?._id
-                    vc.profileImage.image = UIImage(imageLiteralResourceName: "TestImage1")
+                    vc.deviceToken = profileData.res?.deviceToken
                 }
             }
         }

@@ -11,6 +11,8 @@ import UIKit
 class ProfileController: UIViewController {
     var userStateModelController: UserStateModelController!
 
+    var deviceToken : String?
+    
     @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var profileName: UILabel!
     @IBOutlet weak var profileNumber: UILabel!
@@ -20,6 +22,7 @@ class ProfileController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
+        profileNumber.text = deviceToken ?? "nil"
     }
     
 

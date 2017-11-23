@@ -75,6 +75,7 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
             "password": (passwordTextField?.text)!,
             "first_name": (nameTextField?.text)!,
             "last_name": (surnameTextField?.text)!,
+            "deviceToken": userStateModelController.userState.deviceToken ?? "nil"
         ]
         
         Alamofire.request("https://warm-castle-66534.herokuapp.com/register",method: .post, parameters: parameters, encoding: JSONEncoding.default)
