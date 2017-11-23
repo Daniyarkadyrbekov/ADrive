@@ -437,7 +437,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="esf-I2-snP">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profileImage" translatesAutoresizingMaskIntoConstraints="NO" id="esf-I2-snP">
                                 <rect key="frame" x="87" y="72" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="HbR-np-3Yi"/>
@@ -453,23 +453,29 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naw-hE-xK4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Surname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="naw-hE-xK4">
                                 <rect key="frame" x="87" y="328" width="200" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="nbH-hL-el5"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgI-yF-X4e">
-                                <rect key="frame" x="87" y="370" width="200" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JgI-yF-X4e">
+                                <rect key="frame" x="87" y="376" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="9Zm-rm-5wz"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rht-JJ-e1m">
-                                <rect key="frame" x="87" y="418" width="200" height="40"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rht-JJ-e1m">
+                                <rect key="frame" x="87" y="424" width="200" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="mnB-F9-qvU"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -478,10 +484,21 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Rxz-C8-Nmh" firstAttribute="top" secondItem="esf-I2-snP" secondAttribute="bottom" constant="8" id="B03-4b-PAQ"/>
+                            <constraint firstItem="Rht-JJ-e1m" firstAttribute="leading" secondItem="esf-I2-snP" secondAttribute="leading" id="DFw-HB-rRe"/>
+                            <constraint firstItem="JgI-yF-X4e" firstAttribute="top" secondItem="naw-hE-xK4" secondAttribute="bottom" constant="8" id="GXD-vD-4b1"/>
                             <constraint firstItem="Rxz-C8-Nmh" firstAttribute="leading" secondItem="esf-I2-snP" secondAttribute="leading" id="Gca-cw-PKq"/>
                             <constraint firstItem="esf-I2-snP" firstAttribute="top" secondItem="alq-N4-UBo" secondAttribute="bottom" constant="8" id="Ub8-cP-J3F"/>
+                            <constraint firstItem="naw-hE-xK4" firstAttribute="top" secondItem="Rxz-C8-Nmh" secondAttribute="bottom" constant="8" id="Wc2-zy-bHr"/>
                             <constraint firstItem="Rxz-C8-Nmh" firstAttribute="trailing" secondItem="esf-I2-snP" secondAttribute="trailing" id="aS8-sT-hzm"/>
                             <constraint firstItem="esf-I2-snP" firstAttribute="centerX" secondItem="XcH-vB-nJb" secondAttribute="centerX" id="awP-7t-5q1"/>
+                            <constraint firstItem="Rht-JJ-e1m" firstAttribute="trailing" secondItem="esf-I2-snP" secondAttribute="trailing" id="c4M-Bj-eWq"/>
+                            <constraint firstItem="naw-hE-xK4" firstAttribute="trailing" secondItem="esf-I2-snP" secondAttribute="trailing" id="dq0-dn-rJx"/>
+                            <constraint firstItem="Rxz-C8-Nmh" firstAttribute="leading" secondItem="esf-I2-snP" secondAttribute="leading" id="elI-CL-czW"/>
+                            <constraint firstItem="JgI-yF-X4e" firstAttribute="leading" secondItem="esf-I2-snP" secondAttribute="leading" id="io2-1z-ofQ"/>
+                            <constraint firstItem="naw-hE-xK4" firstAttribute="leading" secondItem="esf-I2-snP" secondAttribute="leading" id="nf3-kh-yRQ"/>
+                            <constraint firstItem="JgI-yF-X4e" firstAttribute="trailing" secondItem="esf-I2-snP" secondAttribute="trailing" id="swb-Ck-2Sc"/>
+                            <constraint firstItem="Rxz-C8-Nmh" firstAttribute="trailing" secondItem="esf-I2-snP" secondAttribute="trailing" id="xO5-oD-ACX"/>
+                            <constraint firstItem="Rht-JJ-e1m" firstAttribute="top" secondItem="JgI-yF-X4e" secondAttribute="bottom" constant="8" id="xW6-vv-im2"/>
                         </constraints>
                     </view>
                     <connections>
@@ -517,6 +534,7 @@
     </scenes>
     <resources>
         <image name="carBackground3" width="1080" height="1920"/>
+        <image name="profileImage" width="200" height="203"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="K7P-os-CMk"/>

@@ -17,10 +17,17 @@ class DistanceTableControllerTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        Alamofire.request("https://warm-castle-66534.herokuapp.com/push",method: .post)
-            .responseJSON { response in
-                print(response)
+        let userState = UserStateModel()
+        if let token = userState.token {
+            //Get to auth to check is token valid
+            let headers: HTTPHeaders = [
+                "token": token
+            ]
+            print(token)
+            Alamofire.request("https://warm-castle-66534.herokuapp.com/push",method: .post, headers: headers)
+                .responseJSON { response in
+                    print(response)
+            }
         }
         
         // Uncomment the following line to preserve selection between presentations

@@ -207,9 +207,7 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         }
         if "ProfileSegue" == segue.identifier {
             if let vc =  segue.destination as? ProfileController {
-                if let profileData = self.profileData {
-                    vc.deviceToken = profileData.res?.deviceToken
-                }
+                
             }
         }
         if "LogoutSegue" == segue.identifier {
