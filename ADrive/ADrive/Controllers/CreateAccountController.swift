@@ -80,14 +80,13 @@ class CreateAccountController: UIViewController, UITextFieldDelegate {
         
         Alamofire.request("https://warm-castle-66534.herokuapp.com/register",method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in
-                //print(response)
+                print(response)
                 if let json = response.data {
                     do {
                         let jsonErr = try JSONSerialization.jsonObject(with: json, options: .mutableContainers) as! Dictionary<String, Any>
                         if let _ = jsonErr["err"] as? Dictionary<String, Any> {
                             self.errorAlert(withMessage: "Ошибка Регистрации. Попробуйте использовать другой email")
                         }else{
-                            let _ = try JSONDecoder().decode(JsonObj.self, from: json)
                             self.makeAuthorisation(with: parameters)
                         }
                     }catch let jsonErr {

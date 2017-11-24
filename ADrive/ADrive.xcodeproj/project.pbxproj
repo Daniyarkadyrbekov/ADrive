@@ -21,6 +21,7 @@
 		2897C7C61F8E541200AB76B0 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C41F8E541200AB76B0 /* LoginController.swift */; };
 		2897C7CA1F8F6B2200AB76B0 /* CreateAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */; };
 		2897C7CC1F8F6CF600AB76B0 /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */; };
+		28991A461FC8CE800085CB0C /* Authentification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28991A451FC8CE800085CB0C /* Authentification.swift */; };
 		28DFC4681FA1FFC5009739D6 /* LocationsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFC4671FA1FFC5009739D6 /* LocationsModel.swift */; };
 		91ED72437DE3E7747EE55D6C /* Pods_ADrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C30115803FE460D9178201E /* Pods_ADrive.framework */; };
 /* End PBXBuildFile section */
@@ -43,6 +44,7 @@
 		2897C7C91F8F6B2200AB76B0 /* CreateAccountController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountController.swift; sourceTree = "<group>"; };
 		2897C7CB1F8F6CF500AB76B0 /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		28991A421FC367590085CB0C /* ADrive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ADrive.entitlements; sourceTree = "<group>"; };
+		28991A451FC8CE800085CB0C /* Authentification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentification.swift; sourceTree = "<group>"; };
 		28DFC4671FA1FFC5009739D6 /* LocationsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsModel.swift; sourceTree = "<group>"; };
 		3C30115803FE460D9178201E /* Pods_ADrive.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ADrive.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BED05C58104D2815C308A0A8 /* Pods-ADrive.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ADrive.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ADrive/Pods-ADrive.debug.xcconfig"; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 				28DFC4671FA1FFC5009739D6 /* LocationsModel.swift */,
 				2863B9641FB851F600D80FF8 /* UserStateModel.swift */,
 				2887437E1FC32D8200C8FB0D /* UserData.swift */,
+				28991A451FC8CE800085CB0C /* Authentification.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -301,6 +304,7 @@
 				282F17B11F85710B00D3A5DE /* AppDelegate.swift in Sources */,
 				280C086A1FC1CC4300CD86CB /* ProfileController.swift in Sources */,
 				2897C7CA1F8F6B2200AB76B0 /* CreateAccountController.swift in Sources */,
+				28991A461FC8CE800085CB0C /* Authentification.swift in Sources */,
 				28DFC4681FA1FFC5009739D6 /* LocationsModel.swift in Sources */,
 				2863B96A1FBC6F2F00D80FF8 /* UserStandartController.swift in Sources */,
 			);

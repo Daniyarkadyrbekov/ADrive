@@ -26,6 +26,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         let res : String?
         let err: Int?
     }
+    
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
         guard let login = loginTextField.text, login != "" else {
@@ -55,7 +56,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
                     }
                 }
         }
-
     }
     
     override func viewDidLoad() {
