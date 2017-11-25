@@ -13,6 +13,8 @@ class ProfileController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     var userStateModelController: UserStateModelController!
     
+    var userData: UserData!
+    
     let imagePicker = UIImagePickerController()
     
     
@@ -41,7 +43,17 @@ class ProfileController: UIViewController, UIImagePickerControllerDelegate, UINa
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setUserProfileData()
+        
         imagePicker.delegate = self
+    }
+    
+    private func setUserProfileData(){
+        profileName.text = userData._id
+        profileNumber.text = userData.deviceToken
+        profileEmail.text = userData.email
+        profileSurname.text = userData.createdAt
+        
     }
     
     func profileImageTapped(tapGestureRecognizer: UITapGestureRecognizer){

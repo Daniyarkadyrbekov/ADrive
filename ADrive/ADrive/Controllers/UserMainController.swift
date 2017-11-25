@@ -175,7 +175,23 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
    
     
     func buttonAction(sender: UIButton!) {
-        print("Button tapped")
+        guard let userToken = userStateModelController.userState.token else {
+            return
+        }
+        let location: [String : String] = [
+            "lat" : "\(locationManager.location!.coordinate.latitude)",
+            "lng" : "\(locationManager.location!.coordinate.longitude)"
+        ]
+        let parameters: [String: Any] = [
+            "token": userToken,
+            "location": location
+        ]
+        
+        Alamofire.request("https://warm-castle-66534.herokuapp.com/accept-request",method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                print(response)
+        }
+        
     }
     
     func tableButtonAction(sender: UIButton!){
@@ -207,7 +223,9 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         }
         if "ProfileSegue" == segue.identifier {
             if let vc =  segue.destination as? ProfileController {
-                
+                if let userData = self.profileData?.res {
+                    vc.userData = userData
+                }
             }
         }
         if "LogoutSegue" == segue.identifier {

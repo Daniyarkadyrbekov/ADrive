@@ -11,7 +11,7 @@ import GoogleMaps
 import CoreLocation
 import Alamofire
 
-class UserStandartController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
+class AdminController: UIViewController, CLLocationManagerDelegate, GMSMapViewDelegate {
     //location and Map
     var locationManager = CLLocationManager()
     var mapView: GMSMapView!
@@ -25,7 +25,7 @@ class UserStandartController: UIViewController, CLLocationManagerDelegate, GMSMa
         
         let button = UIButton(type: .system)
         button.backgroundColor = .red
-        button.setTitle("Принять предложение", for: .normal)
+        button.setTitle("Пригласить всех", for: .normal)
         button.setTitleColor(UIColor.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 12

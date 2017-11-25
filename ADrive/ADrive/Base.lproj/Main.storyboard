@@ -136,12 +136,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="carBackground3" translatesAutoresizingMaskIntoConstraints="NO" id="xw7-oz-sTL">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Создать Аккаунт" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMh-Hs-qX3">
-                                <rect key="frame" x="24" y="158" width="327" height="32"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="phv-4u-uCI">
                                 <rect key="frame" x="24" y="261" width="327" height="43"/>
                                 <nil key="textColor"/>
@@ -183,35 +177,73 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Создать Аккаунт" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RMh-Hs-qX3">
+                                <rect key="frame" x="24" y="119" width="327" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gTs-Uv-yX0">
+                                <rect key="frame" x="24" y="159" width="327" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="Vgr-Vw-Qco"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Добавить фото профиля"/>
+                                <connections>
+                                    <action selector="addPhotoButtonPressed:" destination="Wjv-CL-Rha" eventType="touchUpInside" id="HuK-o2-A6L"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="JLk-Od-8yf" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="0j7-ig-bWi"/>
                             <constraint firstItem="4SA-Cf-K9O" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="2az-bk-oYT"/>
                             <constraint firstItem="RMh-Hs-qX3" firstAttribute="leading" secondItem="qqC-vf-DIW" secondAttribute="leadingMargin" constant="8" id="6mb-T8-O9h"/>
+                            <constraint firstItem="gTs-Uv-yX0" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="6rn-x8-VQv"/>
+                            <constraint firstItem="phv-4u-uCI" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="736-4I-umF"/>
                             <constraint firstItem="phv-4u-uCI" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="7EF-W1-H7t"/>
-                            <constraint firstItem="94A-UX-rat" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="7rA-M8-FjT"/>
+                            <constraint firstItem="94A-UX-rat" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="7rA-M8-FjT"/>
+                            <constraint firstItem="fCw-Yd-ANz" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="7wg-Bo-ibK"/>
+                            <constraint firstItem="fCw-Yd-ANz" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="85h-Zz-jky"/>
+                            <constraint firstItem="PKv-a1-LnV" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="87H-A2-zWJ"/>
                             <constraint firstItem="xw7-oz-sTL" firstAttribute="top" secondItem="YnD-2Q-ioB" secondAttribute="bottom" constant="-64" id="8Lk-yu-IqU"/>
+                            <constraint firstItem="4SA-Cf-K9O" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="8Lw-4N-Eox"/>
+                            <constraint firstItem="PKv-a1-LnV" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="GyL-Q1-lxi"/>
+                            <constraint firstItem="94A-UX-rat" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="Ipa-X3-9XH"/>
+                            <constraint firstItem="phv-4u-uCI" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="Ixl-pc-Ycm"/>
                             <constraint firstItem="4SA-Cf-K9O" firstAttribute="top" secondItem="JLk-Od-8yf" secondAttribute="bottom" constant="20" id="JNM-d2-e2p"/>
+                            <constraint firstItem="JLk-Od-8yf" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="Jjs-rw-Aav"/>
                             <constraint firstItem="aLn-XN-S9D" firstAttribute="top" secondItem="xw7-oz-sTL" secondAttribute="bottom" id="O0g-2C-r31"/>
                             <constraint firstItem="phv-4u-uCI" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="Ohu-db-3aq"/>
                             <constraint firstItem="PKv-a1-LnV" firstAttribute="top" secondItem="94A-UX-rat" secondAttribute="bottom" constant="8" id="PiU-8T-OES"/>
-                            <constraint firstItem="fCw-Yd-ANz" firstAttribute="top" secondItem="RMh-Hs-qX3" secondAttribute="bottom" constant="20" id="ThR-ba-lsN"/>
+                            <constraint firstItem="gTs-Uv-yX0" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="RKL-LI-xnr"/>
+                            <constraint firstItem="fCw-Yd-ANz" firstAttribute="top" secondItem="gTs-Uv-yX0" secondAttribute="bottom" constant="8" id="RRb-oJ-vTT"/>
                             <constraint firstItem="fCw-Yd-ANz" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="Tk4-8e-Nhy"/>
                             <constraint firstItem="4SA-Cf-K9O" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="UWH-5I-tOV"/>
                             <constraint firstItem="94A-UX-rat" firstAttribute="top" secondItem="phv-4u-uCI" secondAttribute="bottom" constant="8" id="Uzv-Fe-dhu"/>
                             <constraint firstItem="94A-UX-rat" firstAttribute="centerY" secondItem="qqC-vf-DIW" secondAttribute="centerY" id="Vbz-hc-W7O"/>
                             <constraint firstItem="JLk-Od-8yf" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="WRx-1b-FjB"/>
-                            <constraint firstItem="94A-UX-rat" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="YgZ-xf-aoe"/>
+                            <constraint firstItem="4SA-Cf-K9O" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="Web-i8-B4a"/>
+                            <constraint firstItem="94A-UX-rat" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="YgZ-xf-aoe"/>
                             <constraint firstItem="PKv-a1-LnV" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="ZAr-P3-LCH"/>
+                            <constraint firstItem="94A-UX-rat" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="a4i-9Z-0Re"/>
                             <constraint firstItem="94A-UX-rat" firstAttribute="centerX" secondItem="qqC-vf-DIW" secondAttribute="centerX" id="bVR-dp-AaY"/>
+                            <constraint firstItem="4SA-Cf-K9O" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="bkc-sI-SxF"/>
+                            <constraint firstItem="gTs-Uv-yX0" firstAttribute="top" secondItem="RMh-Hs-qX3" secondAttribute="bottom" constant="8" id="cTJ-wz-PiF"/>
+                            <constraint firstItem="PKv-a1-LnV" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="dPn-bH-Bo3"/>
                             <constraint firstItem="fCw-Yd-ANz" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="eli-VQ-dPF"/>
                             <constraint firstAttribute="trailingMargin" secondItem="RMh-Hs-qX3" secondAttribute="trailing" constant="8" id="fzG-I7-DR2"/>
                             <constraint firstItem="xw7-oz-sTL" firstAttribute="leading" secondItem="qqC-vf-DIW" secondAttribute="leading" id="hzi-59-lzc"/>
+                            <constraint firstItem="fCw-Yd-ANz" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="i0U-Pi-wUW"/>
                             <constraint firstAttribute="trailing" secondItem="xw7-oz-sTL" secondAttribute="trailing" id="onk-qY-KUm"/>
+                            <constraint firstItem="phv-4u-uCI" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="poh-Ob-2Vk"/>
+                            <constraint firstItem="94A-UX-rat" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="qDK-Zj-tSL"/>
                             <constraint firstItem="phv-4u-uCI" firstAttribute="top" secondItem="fCw-Yd-ANz" secondAttribute="bottom" constant="8" id="qRw-Zd-itc"/>
+                            <constraint firstItem="JLk-Od-8yf" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="txE-Se-yB2"/>
                             <constraint firstItem="JLk-Od-8yf" firstAttribute="top" secondItem="PKv-a1-LnV" secondAttribute="bottom" constant="8" id="ujl-GG-pjk"/>
                             <constraint firstItem="PKv-a1-LnV" firstAttribute="leading" secondItem="RMh-Hs-qX3" secondAttribute="leading" id="vBI-u9-GjX"/>
+                            <constraint firstItem="JLk-Od-8yf" firstAttribute="trailing" secondItem="RMh-Hs-qX3" secondAttribute="trailing" id="vk6-1q-Upl"/>
                         </constraints>
                     </view>
                     <connections>
@@ -225,7 +257,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="apA-73-zdQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4110" y="749"/>
+            <point key="canvasLocation" x="4169" y="749"/>
         </scene>
         <!--Forgot Password Controller-->
         <scene sceneID="kDJ-67-YoG">

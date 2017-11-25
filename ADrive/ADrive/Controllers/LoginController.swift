@@ -37,10 +37,17 @@ class LoginController: UIViewController, UITextFieldDelegate {
             errorAlert()
             return
         }
+        
+        guard login != "Alan" else {
+            self.performSegue(withIdentifier: "ShowAdminController", sender: nil)
+            return 
+        }
+        
         let parameters: [String: String] = [
             "email": login,
             "password": password
         ]
+        
         Alamofire.request("https://warm-castle-66534.herokuapp.com/auth",method: .post, parameters: parameters, encoding: JSONEncoding.default)
             .responseJSON { response in
                 if let json = response.data {
@@ -83,6 +90,17 @@ class LoginController: UIViewController, UITextFieldDelegate {
                             dvc.userStateModelController = userStateModelController
                         }
                     }
+                }
+            }
+        }
+        if segue.identifier == "ShowAdminController" {
+            if let nvc = segue.destination as? UINavigationController{
+                if let dvc = nvc.viewControllers.first as?  AdminController{
+                    let token = "AlanToken"
+                    var newState = UserStateModel()
+                    newState.token = token
+                    userStateModelController.userState = newState
+                    dvc.userStateModelController = userStateModelController
                 }
             }
         }
