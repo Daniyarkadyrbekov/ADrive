@@ -16,11 +16,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     var userStateModelController: UserStateModelController!
-
-    
-    let headers: HTTPHeaders = [
-        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU5ZWRmYTZlOGM4YmQwNGNhZmJmZDU1ZSIsImVtYWlsIjoidGVzdEB0ZXN0LmNvbSIsImlhdCI6MTUxMDMzNTk2MX0.daBpomFXXEWWURJPVzBz2KzhR_atjN0k9EuQTvWHGCk"
-    ]
     
     struct JsonObj: Decodable {
         let res : String?
@@ -38,45 +33,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let parameters: [String: String] = [
-            "email": login,
-            "password": password
-        ]
-        
-        guard login != "Alan@test.com" else {
-            Alamofire.request("https://warm-castle-66534.herokuapp.com/auth",method: .post, parameters: parameters, encoding: JSONEncoding.default)
-                .responseJSON { response in
-                    if let json = response.data {
-                        do {
-                            let courses = try JSONDecoder().decode(JsonObj.self, from: json)
-                            guard courses.err == nil else {
-                                self.errorAlert()
-                                return
-                            }
-                            self.performSegue(withIdentifier: "ShowAdminController", sender: courses)
-                        }catch let jsonErr {
-                            print("Error serializing json:", jsonErr)
-                        }
-                    }
-            }
-            return
-        }
-        
-        Alamofire.request("https://warm-castle-66534.herokuapp.com/auth",method: .post, parameters: parameters, encoding: JSONEncoding.default)
-            .responseJSON { response in
-                if let json = response.data {
-                    do {
-                        let courses = try JSONDecoder().decode(JsonObj.self, from: json)
-                        guard courses.err == nil else {
-                            self.errorAlert()
-                            return
-                        }
-                       self.performSegue(withIdentifier: "ShowMainController", sender: courses)
-                    }catch let jsonErr {
-                        print("Error serializing json:", jsonErr)
-                    }
-                }
-        }
     }
     
     override func viewDidLoad() {
@@ -87,9 +43,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(LoginController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-//        
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+
         
     }
     
@@ -132,22 +86,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
             }
         }
     }
-//
-//    func keyboardWillShow(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if view.frame.origin.y == 0{
-//                self.view.frame.origin.y -= keyboardSize.height / 2
-//            }
-//        }
-//    }
-//
-//    func keyboardWillHide(notification: NSNotification) {
-//        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-//            if view.frame.origin.y != 0 {
-//                self.view.frame.origin.y += keyboardSize.height / 2
-//            }
-//        }
-//    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)

@@ -16,7 +16,7 @@ class Authentification{
     private let first_name:String?
     private let last_name:String?
     private let deviceToken:String?
-    private var requestIsSuccessful: Bool?
+    var requestIsSuccessful: Bool?
     var token: String?
 
     
@@ -32,6 +32,9 @@ class Authentification{
     }
     
     func authorization() {
+        
+        requestIsSuccessful = nil
+        
         guard let email = self.email, let password = self.password else {
             requestIsSuccessful =  false
             return
