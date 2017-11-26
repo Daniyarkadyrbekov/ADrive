@@ -31,9 +31,10 @@ class Authentification{
         token = nil
     }
     
-    func authorization() -> Bool {
+    func authorization() {
         guard let email = self.email, let password = self.password else {
-            return false
+            requestIsSuccessful =  false
+            return
         }
         
         let parameters: [String: String] = [
@@ -66,9 +67,5 @@ class Authentification{
                     }
                 }
         }
-        guard let requestIsSuccessful = requestIsSuccessful else {
-            return false
-        }
-        return requestIsSuccessful
     }
 }

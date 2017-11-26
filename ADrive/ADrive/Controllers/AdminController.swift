@@ -47,11 +47,7 @@ class AdminController: UIViewController, CLLocationManagerDelegate, GMSMapViewDe
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        navigationItem.title = "Карта города"
-        
+    override func loadView() {
         GMSServices.provideAPIKey("AIzaSyAPx222p1RMhFO7PSf-r3Aiiyj1nhgILsY")
         let camera = GMSCameraPosition.camera(withLatitude: 55.751244, longitude: 37.618423, zoom: 10.0)
         mapView = GMSMapView.map(withFrame: CGRect.zero, camera: camera)
@@ -63,6 +59,12 @@ class AdminController: UIViewController, CLLocationManagerDelegate, GMSMapViewDe
         self.locationManager.startUpdatingLocation()
         
         view = mapView
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.title = "Карта города"
         
         view.addSubview(userAcceptButton)
         setUpUserAcceptButton()
@@ -95,7 +97,18 @@ class AdminController: UIViewController, CLLocationManagerDelegate, GMSMapViewDe
     
     
     func buttonAction(sender: UIButton!) {
-        print("Button tapped")
+        let userState = UserStateModel()
+        if let token = userState.token {
+            //Get to auth to check is token valid
+            let headers: HTTPHeaders = [
+                "token": token
+            ]
+            print(token)
+            Alamofire.request("https://warm-castle-66534.herokuapp.com/push",method: .post, headers: headers)
+                .responseJSON { response in
+                    print(response)
+            }
+        }
     }
     
     // MARK: GMSMapViewDelegate

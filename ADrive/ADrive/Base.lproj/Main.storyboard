@@ -95,7 +95,7 @@
                         <outlet property="loginTextField" destination="ZfH-SO-kEz" id="rdP-lf-5o2"/>
                         <outlet property="passwordTextField" destination="Zgx-21-D9z" id="IdB-Xe-kw9"/>
                         <segue destination="fbG-K8-ijA" kind="showDetail" identifier="ShowMainController" id="r7Z-8B-XLM"/>
-                        <segue destination="Utc-7J-P6m" kind="showDetail" identifier="ShowStandartController" id="4Rd-AC-R3f"/>
+                        <segue destination="Utc-7J-P6m" kind="showDetail" identifier="ShowAdminController" id="4Rd-AC-R3f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZqL-KW-eJv" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -105,7 +105,7 @@
         <!--ADrive-->
         <scene sceneID="m42-T1-bCd">
             <objects>
-                <viewController id="TqW-tJ-7kQ" customClass="UserStandartController" customModule="ADrive" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="TqW-tJ-7kQ" customClass="AdminController" customModule="ADrive" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="89L-KY-AyL"/>
                         <viewControllerLayoutGuide type="bottom" id="Zg7-tR-h3n"/>
@@ -569,6 +569,6 @@
         <image name="profileImage" width="200" height="203"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="K7P-os-CMk"/>
+        <segue reference="r7Z-8B-XLM"/>
     </inferredMetricsTieBreakers>
 </document>
