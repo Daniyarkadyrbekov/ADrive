@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import ALCameraViewController
 
 class CreateAccountController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -16,10 +17,6 @@ class CreateAccountController: UIViewController, UITextFieldDelegate, UIImagePic
     @IBOutlet weak var repeatPasswordTextField: UITextField!
     @IBOutlet weak var surnameTextField: UITextField!
     @IBOutlet weak var nameTextField: UITextField!
-    
-    let imagePicker = UIImagePickerController()
-    
-    var localPath:String?;
     
     var userStateModelController: UserStateModelController!
     
@@ -37,70 +34,20 @@ class CreateAccountController: UIViewController, UITextFieldDelegate, UIImagePic
         surnameTextField.delegate = self
         nameTextField.delegate = self
         
-        imagePicker.delegate = self
-        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(CreateAccountController.dismissKeyboard))
         view.addGestureRecognizer(tap)
         // Do any additional setup after loading the view.
     }
     
     @IBAction func addPhotoButtonPressed(_ sender: UIButton) {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.mediaTypes = UIImagePickerController.availableMediaTypes(for: .photoLibrary)!
-        present(imagePicker, animated: true, completion: nil)
-
-    }
-    
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]){
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else {
-            return
-        }
+        let cropping = CroppingParameters(isEnabled: true, allowResizing: true, allowMoving: true, minimumSize: CGSize(width: 60, height: 60))
         
-        // We use document directory to place our cloned image
-        let documentDirectory: NSString = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first! as NSString
-        
-        // Set static name, so everytime image is cloned, it will be named "temp", thus rewrite the last "temp" image.
-        // *Don't worry it won't be shown in Photos app.
-        let imageName = "temp"
-        let imagePath = documentDirectory.appendingPathComponent(imageName)
-        
-        // Encode this image into JPEG. *You can add conditional based on filetype, to encode into JPEG or PNG
-        if let data = UIImageJPEGRepresentation(image, 80) {
-            // Save cloned image into document directory
-            try! data.write(to: URL(fileURLWithPath: imagePath))
-        }
-        
-        // Save it's path
-        localPath = imagePath
-        
-        Alamofire.upload(
-            multipartFormData: { formData in
-                let filePath = NSURL(fileURLWithPath: self.localPath!)
-                let imageData = try? Data.init(contentsOf: filePath as URL)
-                formData.append(imageData!, withName: "file")
-                
-        },
-            to: "https://warm-castle-66534.herokuapp.com/upload",
-            encodingCompletion: { encodingResult in
-                switch encodingResult {
-                case .success(let upload, _, _):
-                    upload.responseJSON { response in
-                        debugPrint(response)
-                    }
-                case .failure(let encodingError):
-                    print(encodingError)
-                }
-        })
-        
-        dismiss(animated: true, completion: {
+        let cameraViewController = CameraViewController(croppingParameters: cropping, allowsLibraryAccess: true, allowsSwapCameraOrientation: true, allowVolumeButtonCapture: true){ [weak self] image, asset in
             
-        })
-    }
-    
-    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismiss(animated: true, completion: nil)
+            self?.dismiss(animated: true, completion: nil)
+            
+        }
+        present(cameraViewController, animated: true, completion: nil)
     }
     
     

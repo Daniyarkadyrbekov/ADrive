@@ -31,7 +31,21 @@ class AdminController: UIViewController, CLLocationManagerDelegate, GMSMapViewDe
         button.layer.cornerRadius = 12
         button.layer.masksToBounds = true
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
-        button.addTarget(self, action: #selector(buttonAction), for: .touchUpInside)
+        button.addTarget(self, action: #selector(inviteButtonAction), for: .touchUpInside)
+        return button
+    }()
+    
+    let userTableDistanceButton: UIButton = {
+        
+        let button = UIButton(type: .system)
+        button.backgroundColor = .red
+        button.setTitle("Таблица", for: .normal)
+        button.setTitleColor(UIColor.white, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.layer.cornerRadius = 6
+        button.layer.masksToBounds = true
+        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
+        button.addTarget(self, action: #selector(getListButtonAction), for: .touchUpInside)
         return button
     }()
     
@@ -67,7 +81,9 @@ class AdminController: UIViewController, CLLocationManagerDelegate, GMSMapViewDe
         navigationItem.title = "Карта города"
         
         view.addSubview(userAcceptButton)
+        view.addSubview(userTableDistanceButton)
         setUpUserAcceptButton()
+        setUpUserTableDistancetButton()
         
     }
     
@@ -94,17 +110,37 @@ class AdminController: UIViewController, CLLocationManagerDelegate, GMSMapViewDe
         view.addConstraint(NSLayoutConstraint(item: userAcceptButton, attribute: .trailingMargin, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1, constant: -60))
         
     }
+    func setUpUserTableDistancetButton() {
+        
+        view.addConstraint(NSLayoutConstraint(item: userTableDistanceButton, attribute: .top, relatedBy: .equal, toItem: self.topLayoutGuide, attribute:.bottom, multiplier: 1, constant: 30))
+        view.addConstraint(NSLayoutConstraint(item: userTableDistanceButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute,multiplier: 1, constant: 40))
+        view.addConstraint(NSLayoutConstraint(item: userTableDistanceButton, attribute: .width, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute,multiplier: 1, constant: 60))
+        view.addConstraint(NSLayoutConstraint(item: userTableDistanceButton, attribute: .trailingMargin, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1, constant: 0))
+    }
     
-    
-    func buttonAction(sender: UIButton!) {
+    func getListButtonAction(sender: UIButton!) {
         let userState = UserStateModel()
         if let token = userState.token {
             //Get to auth to check is token valid
             let headers: HTTPHeaders = [
                 "token": token
             ]
-            print(token)
-            Alamofire.request("https://warm-castle-66534.herokuapp.com/push",method: .post, headers: headers)
+            //print(token)
+            Alamofire.request("https://warm-castle-66534.herokuapp.com/accepted",method: .post, headers: headers)
+                .responseJSON { response in
+                    print(response)
+            }
+        }
+    }
+    func inviteButtonAction(sender: UIButton!) {
+        let userState = UserStateModel()
+        if let token = userState.token {
+            //Get to auth to check is token valid
+            let headers: HTTPHeaders = [
+                "token": token
+            ]
+            //print(token)
+            Alamofire.request("https://warm-castle-66534.herokuapp.com/push",method: .get, headers: headers)
                 .responseJSON { response in
                     print(response)
             }

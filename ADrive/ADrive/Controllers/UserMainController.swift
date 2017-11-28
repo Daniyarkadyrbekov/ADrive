@@ -45,6 +45,7 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         let button = UIButton(type: .system)
         button.backgroundColor = .red
         button.setTitle("Принять предложение", for: .normal)
+        button.setTitle("Алан пока не доступен", for: .disabled)
         button.setTitleColor(UIColor.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.cornerRadius = 12
@@ -95,7 +96,7 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
                             self.performSegue(withIdentifier: "LogoutSegue", sender: nil)
                         }
                     }
-            }
+                }
         }else {
             self.performSegue(withIdentifier: "LogoutSegue", sender: nil)
         }
@@ -124,6 +125,8 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         
         view.addSubview(userAcceptButton)
         view.addSubview(userTableDistanceButton)
+        self.userAcceptButton.isEnabled = false
+        self.userAcceptButton.backgroundColor = .gray
         setUpUserAcceptButton()
         setUpUserTableDistancetButton()
         

@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (4.5.1)
+  - ALCameraViewController (2.0.3)
   - GoogleMaps (2.4.0):
     - GoogleMaps/Maps (= 2.4.0)
   - GoogleMaps/Base (2.4.0)
@@ -10,14 +11,16 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (~> 4.5)
+  - ALCameraViewController (~> 2.0.3)
   - GoogleMaps
   - GooglePlaces
 
 SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
+  ALCameraViewController: 7b86c2888df0e63f53a801e9d96fe194f51157ec
   GoogleMaps: 8436ab5d1c25e36915b2f7416d0c8e3fa2e76c61
   GooglePlaces: aafe5990fa7951e98e078761bbdaaf236d7e0c65
 
-PODFILE CHECKSUM: a4880c84b154716900262885ffa788ba8b93c646
+PODFILE CHECKSUM: 4d1d71f37615d12f3522d5241e5b196666dccafe
 
 COCOAPODS: 1.3.1

@@ -33,6 +33,46 @@ class LoginController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        let parameters: [String: String] = [
+            "email": login,
+            "password": password
+        ]
+        
+        guard login != "test@test.com" else {
+            Alamofire.request("https://warm-castle-66534.herokuapp.com/auth",method: .post, parameters: parameters, encoding: JSONEncoding.default)
+                .responseJSON { response in
+                    if let json = response.data {
+                        do {
+                            let courses = try JSONDecoder().decode(JsonObj.self, from: json)
+                            guard courses.err == nil else {
+                                self.errorAlert()
+                                return
+                            }
+                            self.performSegue(withIdentifier: "ShowAdminController", sender: courses)
+                        }catch let jsonErr {
+                            print("Error serializing json:", jsonErr)
+                        }
+                    }
+            }
+            return
+        }
+        
+        Alamofire.request("https://warm-castle-66534.herokuapp.com/auth",method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                if let json = response.data {
+                    do {
+                        let courses = try JSONDecoder().decode(JsonObj.self, from: json)
+                        guard courses.err == nil else {
+                            self.errorAlert()
+                            return
+                        }
+                        self.performSegue(withIdentifier: "ShowMainController", sender: courses)
+                    }catch let jsonErr {
+                        print("Error serializing json:", jsonErr)
+                    }
+                }
+        }
+        
     }
     
     override func viewDidLoad() {
