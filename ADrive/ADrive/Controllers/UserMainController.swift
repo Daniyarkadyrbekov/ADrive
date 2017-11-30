@@ -20,6 +20,8 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     //User State
     var userStateModelController: UserStateModelController!
     
+    var acceptButtonIsAvailable = false
+    
     struct JsonObj: Decodable {
         let err: Int?
         let res: UserData?
@@ -125,8 +127,6 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         
         view.addSubview(userAcceptButton)
         view.addSubview(userTableDistanceButton)
-        self.userAcceptButton.isEnabled = false
-        self.userAcceptButton.backgroundColor = .gray
         setUpUserAcceptButton()
         setUpUserTableDistancetButton()
         
@@ -169,6 +169,14 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
     
     func setUpUserAcceptButton() {
         
+        if acceptButtonIsAvailable {
+            self.userAcceptButton.isEnabled = true
+            self.userAcceptButton.backgroundColor = .red
+        }else{
+            self.userAcceptButton.isEnabled = false
+            self.userAcceptButton.backgroundColor = .gray
+        }
+        
         view.addConstraint(NSLayoutConstraint(item: userAcceptButton, attribute: .bottom, relatedBy: .equal, toItem: self.bottomLayoutGuide, attribute:.top, multiplier: 1, constant: -10))
         view.addConstraint(NSLayoutConstraint(item: userAcceptButton, attribute: .leadingMargin, relatedBy: .equal, toItem: view, attribute: .leadingMargin, multiplier: 1, constant: 20))
         view.addConstraint(NSLayoutConstraint(item: userAcceptButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute,multiplier: 1, constant: 60))
@@ -176,6 +184,10 @@ class UserMainController: UIViewController, CLLocationManagerDelegate, GMSMapVie
         
     }
    
+    func loadList(){
+        acceptButtonIsAvailable = true
+        self.view.setNeedsDisplay()
+    }
     
     func buttonAction(sender: UIButton!) {
         guard let userToken = userStateModelController.userState.token else {

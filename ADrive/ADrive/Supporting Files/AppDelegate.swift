@@ -24,7 +24,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         registerForPushNotifications()
+
+        if let notification = launchOptions?[.remoteNotification] as? [String: AnyObject] {
+            // 2
+            let aps = notification["aps"] as! [String: AnyObject]
+            print(aps)
+            if let navigationVC = window?.rootViewController as? UINavigationController {
+                if let mainVC = navigationVC.viewControllers.first as? UserMainController {
+                    mainVC.acceptButtonIsAvailable = true
+                    //mainVC.loadList()
+                }
+            }
+        }
+        
         return true
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        let aps = userInfo["aps"] as! [String : AnyObject]
+        print(aps)
+        if let navigationVC = window?.rootViewController as? UINavigationController {
+            if let mainVC = navigationVC.viewControllers.first as? UserMainController {
+                mainVC.acceptButtonIsAvailable = true
+                //mainVC.loadList()
+            }
+        }
     }
     
     func registerForPushNotifications() {
