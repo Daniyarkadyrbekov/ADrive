@@ -57,101 +57,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ADrive/Controllers/CreateAccountController.swift"
-            timestampString = "535654736.51836"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "makeAuthorisation(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ADrive/Controllers/CreateAccountController.swift"
-            timestampString = "535654736.519072"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
-            landmarkName = "makeAuthorisation(with:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ADrive/Controllers/CreateAccountController.swift"
-            timestampString = "535654736.519228"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "makeAuthorisation(with:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in ADrive.CreateAccountController.makeAuthorisation(with: Swift.Dictionary&lt;Swift.String, Swift.String&gt;) -&gt; ()"
-                  moduleName = "ADrive"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/daniarkadyrbekov/Desktop/Developer/ADrive/ADrive/ADrive/Controllers/CreateAccountController.swift"
-                  timestampString = "533164647.25858"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
-                  offsetFromSymbolStart = "296">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in ADrive.CreateAccountController.makeAuthorisation(with: Swift.Dictionary&lt;Swift.String, Swift.String&gt;) -&gt; ()"
-                  moduleName = "ADrive"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/daniarkadyrbekov/Desktop/Developer/ADrive/ADrive/ADrive/Controllers/CreateAccountController.swift"
-                  timestampString = "533164647.262832"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
-                  offsetFromSymbolStart = "708">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;Any&gt;) -&gt; () in ADrive.CreateAccountController.makeAuthorisation(with: Swift.Dictionary&lt;Swift.String, Swift.String&gt;) -&gt; ()"
-                  moduleName = "ADrive"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/daniarkadyrbekov/Desktop/Developer/ADrive/ADrive/ADrive/Controllers/CreateAccountController.swift"
-                  timestampString = "533164647.267459"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
-                  offsetFromSymbolStart = "1488">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "ADrive/Controllers/UserMainController.swift"
             timestampString = "533726288.889368"
             startingColumnNumber = "9223372036854775807"
@@ -313,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ADrive/Controllers/LoginController.swift"
-            timestampString = "535654736.51968"
+            timestampString = "535655830.278495"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "loginButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -329,11 +234,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ADrive/Controllers/LoginController.swift"
-            timestampString = "535654736.561383"
+            timestampString = "535655830.279766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "loginButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -425,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ADrive/Controllers/CreateAccountController.swift"
-            timestampString = "535654736.562246"
+            timestampString = "535655830.280193"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "registerButtonPresssed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1030,11 +935,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ADrive/Controllers/LoginController.swift"
-            timestampString = "535654736.563408"
+            timestampString = "535655830.322542"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "loginButtonPressed(_:)"
             landmarkType = "7">
             <Locations>
@@ -1046,11 +951,11 @@
                   moduleName = "ADrive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/daniarkadyrbekov/Desktop/Developer/ADrive/ADrive/ADrive/Controllers/LoginController.swift"
-                  timestampString = "535654737.819047"
+                  timestampString = "535655831.154248"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
                   offsetFromSymbolStart = "548">
                </Location>
                <Location
@@ -1061,11 +966,11 @@
                   moduleName = "ADrive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/daniarkadyrbekov/Desktop/Developer/ADrive/ADrive/ADrive/Controllers/LoginController.swift"
-                  timestampString = "535654737.822379"
+                  timestampString = "535655831.156132"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
+                  startingLineNumber = "46"
+                  endingLineNumber = "46"
                   offsetFromSymbolStart = "12">
                </Location>
             </Locations>
@@ -1078,11 +983,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ADrive/Controllers/LoginController.swift"
-            timestampString = "535654736.564103"
+            timestampString = "535655830.322735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "loginButtonPressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1094,11 +999,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ADrive/Controllers/LoginController.swift"
-            timestampString = "535654736.564751"
+            timestampString = "535655830.322975"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "77"
-            endingLineNumber = "77"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "loginButtonPressed(_:)"
             landmarkType = "7">
             <Locations>
@@ -1110,12 +1015,12 @@
                   moduleName = "ADrive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/daniarkadyrbekov/Desktop/Developer/ADrive/ADrive/ADrive/Controllers/LoginController.swift"
-                  timestampString = "535654737.836726"
+                  timestampString = "535655831.163795"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "77"
-                  endingLineNumber = "77"
-                  offsetFromSymbolStart = "3620">
+                  startingLineNumber = "44"
+                  endingLineNumber = "44"
+                  offsetFromSymbolStart = "3252">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1125,11 +1030,11 @@
                   moduleName = "ADrive"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/daniarkadyrbekov/Desktop/Developer/ADrive/ADrive/ADrive/Controllers/LoginController.swift"
-                  timestampString = "535654737.840602"
+                  timestampString = "535655831.165627"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
                   offsetFromSymbolStart = "72">
                </Location>
             </Locations>
@@ -1142,11 +1047,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ADrive/Controllers/LoginController.swift"
-            timestampString = "535654736.565395"
+            timestampString = "535655830.323101"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1158,11 +1063,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ADrive/Controllers/LoginController.swift"
-            timestampString = "535654736.565893"
+            timestampString = "535655830.323221"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1174,11 +1079,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ADrive/Controllers/LoginController.swift"
-            timestampString = "535654736.566463"
+            timestampString = "535655830.323368"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1190,11 +1095,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ADrive/Controllers/LoginController.swift"
-            timestampString = "535654736.56703"
+            timestampString = "535655830.323487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
             landmarkName = "prepare(for:sender:)"
             landmarkType = "7">
          </BreakpointContent>

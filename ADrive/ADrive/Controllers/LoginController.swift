@@ -19,11 +19,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     let authentification = Authentification()
     
-    struct JsonObj: Decodable {
-        let res : String?
-        let err: Int?
-    }
-    
     @IBAction func loginButtonPressed(_ sender: UIButton) {
         
         guard let login = loginTextField.text, login != "" else {
@@ -35,45 +30,17 @@ class LoginController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        let parameters: [String: String] = [
-            "email": login,
-            "password": password
-        ]
-        
         guard login != "test@test.com" else {
-            Alamofire.request("https://warm-castle-66534.herokuapp.com/auth",method: .post, parameters: parameters, encoding: JSONEncoding.default)
-                .responseJSON { response in
-                    if let json = response.data {
-                        do {
-                            let courses = try JSONDecoder().decode(JsonObj.self, from: json)
-                            guard courses.err == nil else {
-                                self.errorAlert()
-                                return
-                            }
-                            self.performSegue(withIdentifier: "ShowAdminController", sender: courses)
-                        }catch let jsonErr {
-                            print("Error serializing json:", jsonErr)
-                        }
-                    }
-            }
+            authentification.authorization(email: login, password: password, completionHandler: { (error, result) in
+                guard error == nil else {
+                    print(error ?? "nil")
+                    return
+                }
+                self.performSegue(withIdentifier: "ShowAdminController", sender: result)
+            })
             return
         }
-        
-//        Alamofire.request("https://warm-castle-66534.herokuapp.com/auth",method: .post, parameters: parameters, encoding: JSONEncoding.default)
-//            .responseJSON { response in
-//                if let json = response.data {
-//                    do {
-//                        let courses = try JSONDecoder().decode(JsonObj.self, from: json)
-//                        guard courses.err == nil else {
-//                            self.errorAlert()
-//                            return
-//                        }
-//                        self.performSegue(withIdentifier: "ShowMainController", sender: courses)
-//                    }catch let jsonErr {
-//                        print("Error serializing json:", jsonErr)
-//                    }
-//                }
-//        }
+
         authentification.authorization(email: login, password: password, completionHandler: { (error, result) in
             guard error == nil else {
                 print(error ?? "nil")
