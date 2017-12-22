@@ -17,6 +17,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordTextField: UITextField!
     var userStateModelController: UserStateModelController!
     
+    let authentification = Authentification()
+    
     struct JsonObj: Decodable {
         let res : String?
         let err: Int?
@@ -57,21 +59,28 @@ class LoginController: UIViewController, UITextFieldDelegate {
             return
         }
         
-        Alamofire.request("https://warm-castle-66534.herokuapp.com/auth",method: .post, parameters: parameters, encoding: JSONEncoding.default)
-            .responseJSON { response in
-                if let json = response.data {
-                    do {
-                        let courses = try JSONDecoder().decode(JsonObj.self, from: json)
-                        guard courses.err == nil else {
-                            self.errorAlert()
-                            return
-                        }
-                        self.performSegue(withIdentifier: "ShowMainController", sender: courses)
-                    }catch let jsonErr {
-                        print("Error serializing json:", jsonErr)
-                    }
-                }
-        }
+//        Alamofire.request("https://warm-castle-66534.herokuapp.com/auth",method: .post, parameters: parameters, encoding: JSONEncoding.default)
+//            .responseJSON { response in
+//                if let json = response.data {
+//                    do {
+//                        let courses = try JSONDecoder().decode(JsonObj.self, from: json)
+//                        guard courses.err == nil else {
+//                            self.errorAlert()
+//                            return
+//                        }
+//                        self.performSegue(withIdentifier: "ShowMainController", sender: courses)
+//                    }catch let jsonErr {
+//                        print("Error serializing json:", jsonErr)
+//                    }
+//                }
+//        }
+        authentification.authorization(email: login, password: password, completionHandler: { (error, result) in
+            guard error == nil else {
+                print(error ?? "nil")
+                return
+            }
+            self.performSegue(withIdentifier: "ShowMainController", sender: result)
+        })
         
     }
     
@@ -93,13 +102,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "ShowMainController" {
             if let nvc = segue.destination as? UINavigationController{
                 if let dvc = nvc.viewControllers.first as? UserMainController{
-                    if let courses = sender as? JsonObj {
-                        if let token = courses.res{
-                            var newState = UserStateModel()
-                            newState.token = token
-                            userStateModelController.userState = newState
-                            dvc.userStateModelController = userStateModelController
-                        }
+                    if let token = sender as? String {
+                        var newState = UserStateModel()
+                        newState.token = token
+                        userStateModelController.userState = newState
+                        dvc.userStateModelController = userStateModelController
                     }
                 }
             }
@@ -108,13 +115,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
         if segue.identifier == "ShowAdminController" {
             if let nvc = segue.destination as? UINavigationController{
                 if let dvc = nvc.viewControllers.first as?  AdminController{
-                    if let courses = sender as? JsonObj {
-                        if let token = courses.res{
-                            var newState = UserStateModel()
-                            newState.token = token
-                            userStateModelController.userState = newState
-                            dvc.userStateModelController = userStateModelController
-                        }
+                    if let token = sender as? String {
+                        var newState = UserStateModel()
+                        newState.token = token
+                        userStateModelController.userState = newState
+                        dvc.userStateModelController = userStateModelController
                     }
                 }
             }
