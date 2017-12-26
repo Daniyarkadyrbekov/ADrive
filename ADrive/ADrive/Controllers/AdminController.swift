@@ -126,21 +126,22 @@ class AdminController: UIViewController, CLLocationManagerDelegate, GMSMapViewDe
                 "token": token
             ]
             //print(token)
-            Alamofire.request("https://warm-castle-66534.herokuapp.com/accepted",method: .post, headers: headers)
+            Alamofire.request("https://warm-castle-66534.herokuapp.com/accepted",method: .get, headers: headers)
                 .responseJSON { response in
                     print(response)
             }
         }
     }
     func inviteButtonAction(sender: UIButton!) {
+        
         let userState = UserStateModel()
         if let token = userState.token {
             //Get to auth to check is token valid
             let headers: HTTPHeaders = [
                 "token": token
             ]
-            //print(token)
-            Alamofire.request("https://warm-castle-66534.herokuapp.com/push",method: .get, headers: headers)
+            print(token)
+            Alamofire.request("https://warm-castle-66534.herokuapp.com/push",method: .post, headers: headers)
                 .responseJSON { response in
                     print(response)
             }

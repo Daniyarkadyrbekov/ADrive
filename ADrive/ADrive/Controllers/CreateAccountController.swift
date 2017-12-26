@@ -95,28 +95,9 @@ class CreateAccountController: UIViewController, UITextFieldDelegate, UIImagePic
             "deviceToken": userStateModelController.userState.deviceToken ?? "nil"
         ]
         
-        Alamofire.request("https://warm-castle-66534.herokuapp.com/register",method: .post, parameters: parameters, encoding: JSONEncoding.default)
-            .responseJSON { response in
-                print(response)
-                if let json = response.data {
-                    do {
-                        let jsonErr = try JSONSerialization.jsonObject(with: json, options: .mutableContainers) as! Dictionary<String, Any>
-                        if let _ = jsonErr["err"] as? Dictionary<String, Any> {
-                            self.errorAlert(withMessage: "Ошибка Регистрации. Попробуйте использовать другой email")
-                        }else{
-                            self.makeAuthorisation(with: parameters)
-                        }
-                    }catch let jsonErr {
-                        print("Error serializing json:", jsonErr)
-                    }
-                }
-        }
-    }
-    
-    func makeAuthorisation(with parameters: [String: String]) {
-        authentification.authorization(email: parameters["email"]!, password: parameters["password"]!, completionHandler: { (error, result) in
+        authentification.registration(email: parameters["email"]!, password: parameters["password"]!, firstName: parameters["first_name"]!, lastName: parameters["last_name"]!, deviceToken: parameters["deviceToken"]!, completionHandler: { (error, result) in
             guard error == nil else {
-                print(error ?? "nil")
+                self.errorAlert(withMessage: error ?? "Низвестная ошибка авторизациии")
                 return
             }
             self.performSegue(withIdentifier: "ShowMainController", sender: result)

@@ -40,5 +40,40 @@ class Authentification{
                 }
         }
     }
+    
+    func registration(email: String, password: String, firstName: String, lastName: String, deviceToken: String?, completionHandler: @escaping (String?, String?) -> () ) {
+        
+        let parameters: [String: String] = [
+            "email": email,
+            "password": password,
+            "first_name": firstName,
+            "last_name": lastName,
+            "deviceToken": deviceToken ?? "nil"
+        ]
+        
+        Alamofire.request("https://warm-castle-66534.herokuapp.com/register",method: .post, parameters: parameters, encoding: JSONEncoding.default)
+            .responseJSON { response in
+                print(response)
+                if let json = response.data {
+                    do {
+                        let jsonErr = try JSONSerialization.jsonObject(with: json, options: .mutableContainers) as! Dictionary<String, Any>
+                        if let _ = jsonErr["err"] as? Dictionary<String, Any> {
+                            completionHandler("Ошибка Регистрации. Попробуйте использовать другой email", nil)
+                        }else{
+                            self.authorization(email: parameters["email"]!, password: parameters["password"]!, completionHandler: { (error, result) in
+                                guard error == nil else {
+                                    completionHandler(error, nil)
+                                    return
+                                }
+                                completionHandler(nil, result)
+                            })
+                        }
+                    }catch let jsonErr {
+                        print("Error serializing json:", jsonErr)
+                        completionHandler("Error serializing json:", nil)
+                    }
+                }
+        }
+    }
 }
 
